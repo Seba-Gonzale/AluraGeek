@@ -1,18 +1,28 @@
 :root {
   --sidePadding: 9rem;
   --mainColor: #2a7ae4;
+  --secondColor: #464646;
 }
 
 * {
   box-sizing: border-box;
-  font-size: 16px;
+  font-size: 16px; /* asigna a botones, inputs, etc.*/
+  font-family: "Raleway", sans-serif; /* asigna a botones, inputs, etc.*/
 }
 
 html {
   height: 100vh;
+  font-family: "Raleway", sans-serif; /* asigna a h1, h2, etc, p, quote, etc.*/
+  font-weight: 400;
 }
 body {
   min-height: 100%;
+}
+a {
+  text-decoration: none;
+}
+b {
+  font-weight: bold;
 }
 
 .nav {
@@ -45,6 +55,9 @@ body {
   background-color: #fff;
   padding: 0.8rem 4rem;
 }
+
+/* Header */
+
 .header__banner {
   background-image: url("./public/images/juegos-de-consola.jpg");
   background-repeat: no-repeat;
@@ -68,16 +81,85 @@ body {
 }
 .header__titulo {
   font-size: 3.25rem;
-  font-family: "Raleway", sans-serif;
+  font-weight: bold;
   margin-bottom: 1rem;
 }
 .header__descripcion {
   font-size: 1.375rem;
-  font-family: "Raleway", sans-serif;
+  font-weight: bold;
 }
 .header__button-consolas {
   color: #fff;
   background-color: var(--mainColor);
   padding: 1rem;
   border: none;
+  transition: text-shadow 0.2s;
+}
+.header__button-consolas:hover {
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+/* Productos */
+
+.productos {
+  color: var(--secondColor);
+  padding: 4rem var(--sidePadding);
+  gap: 2rem;
+}
+.productos__box-titulo-button {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 1rem;
+}
+.productos__button-ver {
+  background-color: transparent;
+  color: var(--mainColor);
+  border: none;
+  position: relative;
+  padding: 0.5rem 2.5rem 0.5rem 0.5rem;
+  font-weight: bold;
+}
+.productos__button-ver:hover {
+  outline: 1px solid var(--mainColor);
+  border-radius: 10px;
+}
+.productos__button-ver span {
+  font-size: 1.5rem;
+  font-weight: 500;
+  position: absolute;
+  right: 5%;
+  top: 6%;
+}
+.productos__titulo {
+  font-size: 2rem;
+  font-weight: 700;
+}
+.productos__lista {
+  display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+
+  padding-bottom: 2rem;
+  overflow: scroll;
+}
+
+/* seleccionamos a todas las listas menos la ultima*/
+.productos__lista:not(:last-child) {
+  margin-bottom: 2rem;
+}
+.productos__items {
+  flex: 0 0 11rem;
+  line-height: 1.5rem;
+}
+.productos__items img {
+  width: 100%;
+}
+.productos__nombre {
+  font-size: 0.875rem;
+  font-weight: 500;
+}
+.productos__precio,
+.productos__detalle {
+  font-weight: bold;
 }
