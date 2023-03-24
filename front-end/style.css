@@ -37,7 +37,7 @@ b {
   width: 33%;
 }
 .nav__input-busqueda {
-  background-image: url("./public/images/lupa.svg");
+  background-image: url("./public/lupa.svg");
   background-repeat: no-repeat;
   background-size: auto 70%;
   background-position: 95% 50%;
@@ -59,7 +59,7 @@ b {
 /* Header */
 
 .header__banner {
-  background-image: url("./public/images/juegos-de-consola.jpg");
+  background-image: url("./public/juegos-de-consola.jpg");
   background-repeat: no-repeat;
   background-size: cover;
 

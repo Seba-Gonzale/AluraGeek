@@ -1,6 +1,6 @@
 export async function getProductos(p_id) {
   const response_JSON = await fetch(
-    `http://localhost:3000/productos?id=${p_id}`
+    `http://localhost:3000/products?id=${p_id}`
   );
   const response_JS = await response_JSON.json();
   return response_JS;
