@@ -104,7 +104,6 @@ b {
 .productos {
   color: var(--secondColor);
   padding: 4rem var(--sidePadding);
-  gap: 2rem;
 }
 .productos__box-titulo-button {
   display: flex;
@@ -145,7 +144,7 @@ b {
 }
 
 /* seleccionamos a todas las listas menos la ultima*/
-.productos__lista:not(:last-child) {
+.productos__listar-categoria:not(:last-child) {
   margin-bottom: 2rem;
 }
 .productos__items {
@@ -165,4 +164,38 @@ b {
 .productos__precio,
 .productos__detalle {
   font-weight: bold;
+}
+
+/* Footer */ /**/ /* Footer */
+
+.footer {
+  display: flex;
+  justify-content: space-evenly;
+  /* color: var(--secondColor); */
+  padding: 4rem var(--sidePadding);
+  background-color: #eaf2fd;
+}
+
+.footer__form-list {
+  list-style: none;
+}
+
+.footer__field {
+  position: relative;
+  margin-bottom: 1rem;
+}
+
+.footer__field label {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+
+  /* display: none; */
+  color: rgba(0, 0, 0, 0.5);
+  font-size: small;
+}
+.footer__field input,
+.footer__field textarea {
+  padding: 0.5rem;
+  padding-top: 1.5rem;
 }

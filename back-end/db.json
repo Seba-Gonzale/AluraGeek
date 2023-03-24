@@ -1,12 +1,40 @@
 {
+  "admin": [],
   "products": [
     {
       "id": 0,
-      "image": "localhost:3000/images/productos/vaso-stormtroopers.png",
+      "image": "http://localhost:3000/images/productos/vaso-stormtroopers.png",
       "name": "vaso de stormtroopers",
       "price": 60.0,
-      "category": "star wars"
+      "categoryId": 0
+    },
+    {
+      "id": 1,
+      "image": "http://localhost:3000/images/productos/camiseta-Atari.png",
+      "name": "Camiseta Atari",
+      "price": 70,
+      "categoryId": 1
+    },
+    {
+      "id": 2,
+      "image": "http://localhost:3000/images/productos/game-boy.png",
+      "name": "Game Boy",
+      "price": 30,
+      "categoryId": 2
     }
   ],
-  "admin": []
+  "categorys": [
+    {
+      "id": 0,
+      "name": "Star Wars"
+    },
+    {
+      "id": 1,
+      "name": "Consolas"
+    },
+    {
+      "id": 2,
+      "name": "Diverso"
+    }
+  ]
 }

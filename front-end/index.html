@@ -13,7 +13,7 @@
       rel="stylesheet"
     />
 
-    <!-- CSS personalizado -->
+    <!-- CSS -->
     <link rel="stylesheet" href="reset.css" />
     <link rel="stylesheet" href="style.css" />
 
@@ -48,10 +48,31 @@
     </header>
 
     <main>
-      <section class="productos">
+      <section class="productos" data-productos>
+        <!-- -->
         <!-- Aqui va la lista de javascript -->
+        <!--  -->
       </section>
     </main>
+
+    <footer class="footer">
+      <figure>
+        <img src="./public/Logo.png" alt="Logo AluraGeek" />
+      </figure>
+      <form class="footer__form" action="">
+        <ul class="footer__form-list">
+          <li class="footer__field">
+            <input type="text" name="name" />
+            <label for="name"><span>Nombre</span></label>
+          </li>
+          <li class="footer__field">
+            <label for="message">Mensaje</label>
+            <textarea name="message" cols="30" rows="10"></textarea>
+          </li>
+          <button type="submit">Enviar</button>
+        </ul>
+      </form>
+    </footer>
 
     <script
       src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
