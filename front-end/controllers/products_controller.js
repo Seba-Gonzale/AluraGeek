@@ -6,20 +6,20 @@ import client_service from "../services/client_service.js";
     const categorys = await client_service.getServerData("/categorys");
 
     categorys.forEach(async (category) => {
-      // Traemos la lista de productos de cada catgoría
+      // Traemos la lista de productos de cada categoría
       const products = await client_service.getServerData(
         `/products?categoryId=${category.id}`
       );
-      const elementCategory = createElementCategory(category.name);
-      const elementLista = elementCategory.querySelector(".productos__lista");
-      products.forEach((_p) => {
-        console.log(_p.id);
-        const elementItem = createElementItem(_p.image, _p.name, _p.price);
-        elementLista.appendChild(elementItem);
+      const element_category = createElementCategory(category.name);
+      const element_productsList =
+        element_category.querySelector(".productos__lista");
+      products.forEach((p) => {
+        const element_item = createElementItem(p.image, p.name, p.price);
+        element_productsList.appendChild(element_item);
       });
-
+      // Añadimos element_category al elemento del DOM data-products
       const sectionProductos = document.querySelector("[data-productos]");
-      sectionProductos.appendChild(elementCategory);
+      sectionProductos.appendChild(element_category);
     });
   } catch (err) {
     console.log(err);
