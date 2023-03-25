@@ -14,15 +14,19 @@
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="reset.css" />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/login/login.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
+    <link rel="stylesheet" href="../css/products.css" />
 
     <title>AluraGeek</title>
   </head>
   <body>
     <header>
       <ul class="nav">
-        <li><img src="./public/Logo.png" alt="Logo AluraGeek" /></li>
+        <li><img src="../public/Logo.png" alt="Logo AluraGeek" /></li>
 
         <li class="nav__busqueda">
           <input
@@ -37,17 +41,40 @@
     </header>
 
     <main>
-      <section id="login"></section>
+      <section id="login" data-login>
+        <form action="" class="login__form">
+          <p class="login__form-title">Inicar Sesión</p>
+          <ul class="login__form-list">
+            <li class="login__form-items login__form-items--email">
+              <input type="email" placeholder="Escriba su correo electrónico" />
+            </li>
+            <li class="login__form-items login__form-items--password">
+              <input type="password" placeholder="Escriba su contraseña" />
+            </li>
+            <button
+              class="login__form-items login__form-button--submit"
+              type="submit"
+              data-login__buttonSubmit
+            >
+              Entrar
+            </button>
+          </ul>
+        </form>
+        <div class="loader">
+          <div class="swivel"></div>
+        </div>
+      </section>
+
       <section class="productos" data-productos>
         <!-- -->
-        <!-- Aqui va la lista de javascript -->
+        <!--* Aqui va la lista de javascript -->
         <!--  -->
       </section>
     </main>
 
     <footer class="footer-AluraGeek">
       <figure>
-        <img src="./public/Logo.png" alt="Logo AluraGeek" />
+        <img src="../public/Logo.png" alt="Logo AluraGeek" />
       </figure>
       <form class="footer-AluraGeek__form" action="">
         <p>Hable con nosotros</p>
@@ -86,5 +113,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="../controllers/hidden_login.js"></script>
+    <script src="../controllers/products_controller.js" type="module"></script>
   </body>
 </html>

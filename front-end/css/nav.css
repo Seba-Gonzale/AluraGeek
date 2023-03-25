@@ -1,0 +1,30 @@
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+
+  padding: 1rem var(--sidePadding);
+}
+.nav__busqueda {
+  width: 33%;
+}
+.nav__input-busqueda {
+  background-image: url("../public/lupa.svg");
+  background-repeat: no-repeat;
+  background-size: auto 70%;
+  background-position: 95% 50%;
+
+  background-color: #f5f5f5;
+  padding: 0.5rem;
+  padding-right: 3rem;
+  border-radius: 20px;
+  border: none;
+  width: 100%;
+}
+.nav__button-login {
+  color: var(--mainColor);
+  border: 1px solid var(--mainColor);
+  background-color: #fff;
+  padding: 0.8rem 4rem;
+}

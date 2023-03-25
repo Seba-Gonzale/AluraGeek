@@ -1,0 +1,38 @@
+.footer-AluraGeek {
+  display: flex;
+  justify-content: space-evenly;
+  /* color: var(--secondColor); */
+  padding: 4rem var(--sidePadding);
+  background-color: #eaf2fd;
+}
+
+.footer-AluraGeek__form-list {
+  list-style: none;
+}
+
+.footer-AluraGeek__field {
+  position: relative;
+  margin: 1rem 0;
+}
+
+.footer-AluraGeek__field label {
+  position: absolute;
+  top: 0.4rem;
+  left: 0.4rem;
+
+  /* display: none; */
+  color: rgba(0, 0, 0, 0.5);
+  font-size: small;
+}
+.footer-AluraGeek__field input,
+.footer-AluraGeek__field textarea {
+  padding: 0.5rem;
+  padding-top: 1.5rem;
+}
+
+/* Footer Developer */ /**/ /* Footer Developer */
+
+.footer-developer {
+  text-align: center;
+  padding: 2rem;
+}
