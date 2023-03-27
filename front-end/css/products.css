@@ -15,10 +15,10 @@
   position: relative;
   padding: 0.5rem 2.5rem 0.5rem 0.5rem;
   font-weight: bold;
+  border-radius: 10px;
 }
 .productos__button-ver:hover {
   outline: 1px solid var(--mainColor);
-  border-radius: 10px;
 }
 .productos__button-ver span {
   font-size: 1.5rem;
@@ -33,7 +33,6 @@
 }
 .productos__lista {
   display: flex;
-  justify-content: flex-start;
   gap: 1rem;
 
   padding-bottom: 2rem;
@@ -46,6 +45,7 @@
 }
 .productos__items {
   flex: 0 0 11rem;
+  max-width: 18%;
   line-height: 1.5rem;
 }
 .productos__items img {

@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../public/favicon.svg"
+      type="image/svg+xml"
+    />
 
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -18,8 +23,9 @@
     <link rel="stylesheet" href="../css/base.css" />
     <link rel="stylesheet" href="../css/nav.css" />
     <link rel="stylesheet" href="../css/login/login.css" />
-    <link rel="stylesheet" href="../css/footer.css" />
     <link rel="stylesheet" href="../css/products.css" />
+    <link rel="stylesheet" href="../css/login/products.login.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
 
     <title>AluraGeek</title>
   </head>
@@ -60,9 +66,6 @@
             </button>
           </ul>
         </form>
-        <div class="loader">
-          <div class="swivel"></div>
-        </div>
       </section>
 
       <section class="productos" data-productos>
@@ -113,7 +116,7 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="../controllers/hidden_login.js"></script>
-    <script src="../controllers/products_controller.js" type="module"></script>
+    <script src="../scripts/hidden_login.js"></script>
+    <script src="../scripts/show_products.login.js" type="module"></script>
   </body>
 </html>

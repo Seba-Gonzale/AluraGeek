@@ -1,0 +1,51 @@
+.productos__listar-categoria {
+  text-align: center;
+}
+
+.productos__lista {
+  /* El css principal está en products.css */
+  justify-content: center;
+  flex-wrap: wrap;
+
+  overflow: auto;
+}
+
+.productos__button--agregar-producto {
+  background-color: var(--mainColor);
+  color: white;
+  border: none;
+  padding: 1rem;
+  font-weight: bold;
+}
+
+.productos__button--ver-mas {
+  background-color: var(--mainColor);
+  color: white;
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+.productos__button--ver-menos {
+  padding: 0.5rem 2rem 0.5rem 0.5rem;
+  width: 100%;
+  border: 2px solid var(--mainColor);
+  margin-bottom: 1rem;
+}
+
+.productos__button-ver:hover {
+  /* CSS principal products.css */
+  outline: none;
+}
+
+.productos__button--ver-mas span {
+  /* CSS principal products.css */
+  font-size: 2rem;
+  top: -25%;
+  right: 0%;
+}
+.productos__button--ver-menos span {
+  /* CSS principal products.css */
+  font-size: 2rem;
+  top: -50%;
+  right: 5px;
+}
