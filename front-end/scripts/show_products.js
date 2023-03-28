@@ -2,8 +2,11 @@ import client_service from "../api/client_service.js";
 import {
   createElemItem,
   createElemCategory,
+  createElemError,
 } from "../util/publicHtmlTemplates.js";
 import loader from "../util/loader.js";
+
+// TODO: terminar el boton "ver mas"
 
 (async function showAllProductsForCategory() {
   const sectionProductos = document.querySelector("[data-productos]");
@@ -37,5 +40,9 @@ import loader from "../util/loader.js";
     });
   } catch (err) {
     console.log(err);
+    if (err instanceof TypeError) {
+      sectionProductos.innerHTML = "";
+      sectionProductos.appendChild(createElemError());
+    }
   }
 })();

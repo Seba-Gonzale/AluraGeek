@@ -59,19 +59,23 @@
             <li class="add-product__item">
               <input type="url" name="imgUrl" />
               <label for="imgUrl">URL de la imagen</label>
-              <button
-                type="button"
-                onclick="this.querySelector('.file').click()"
-              >
-                <input class="file" type="file" style="display: none" />
-                Hola
-              </button>
+              <input class="file" type="file" />
             </li>
-            <li class="add-product__item"></li>
-            <li class="add-product__item"></li>
-            <li class="add-product__item"></li>
-            <li class="add-product__item"></li>
-            <button type="submit">agregar</button>
+            <li class="add-product__item">
+              <input name="name" type="text" />
+              <label for="name">Nombre del Producto</label>
+            </li>
+            <li class="add-product__item">
+              <input name="price" type="number" />
+              <label for="price">Precio del producto</label>
+            </li>
+            <li class="add-product__item">
+              <textarea name="description" cols="30" rows="10"></textarea>
+              <label for="description">Descripción del producto</label>
+            </li>
+            <li class="add-product__item">
+              <button type="submit">Agregar producto</button>
+            </li>
           </ul>
         </form>
       </section>

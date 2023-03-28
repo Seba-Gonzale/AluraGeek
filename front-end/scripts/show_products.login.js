@@ -4,24 +4,22 @@ import {
   createElemItem,
   createElemCategory,
   createElemError,
-  createElemEmpty,
 } from "../util/adminHtmlTemplates.js";
 
 const SHOW_ITEMS = 12;
+let count = 0;
 
 async function fetchProductsFromServer(p_elem_productsList) {
-  console.log(p_elem_productsList.children.length);
-  console.log(p_elem_productsList.children);
-  // const products = await client_service.getServerData(
-  //   `/products?_start=${
-  //     p_elem_productsList.children.length - 1
-  //   }&_limit=${SHOW_ITEMS}`
-  // );
+  const products = await client_service.getServerData(
+    `/products?_start=${count}&_limit=${SHOW_ITEMS}`
+  );
 
-  // products.forEach((p) => {
-  //   const elem_item = createElemItem(p.image, p.name, p.price);
-  //   p_elem_productsList.appendChild(elem_item);
-  // });
+  products.forEach((p) => {
+    const elem_item = createElemItem(p.image, p.name, p.price);
+    p_elem_productsList.appendChild(elem_item);
+    count++;
+    console.log(count);
+  });
 }
 
 (async function showAllProducts() {
@@ -49,15 +47,11 @@ async function fetchProductsFromServer(p_elem_productsList) {
       ".productos__button--ver-menos"
     );
     elemButton_verMenos.addEventListener("click", () => {
-      if (elem_productsList.children.length >= SHOW_ITEMS) {
-        // console.log(elem_productsList.children.length);
-        for (
-          let i = 0;
-          i < elem_productsList.children.length - SHOW_ITEMS;
-          i++
-        ) {
-          elem_productsList.lastChild.remove();
-        }
+      let i = 0;
+      while (count > SHOW_ITEMS && i < SHOW_ITEMS) {
+        elem_productsList.lastChild.remove();
+        count--;
+        i++;
       }
     });
 
@@ -72,9 +66,6 @@ async function fetchProductsFromServer(p_elem_productsList) {
     if (err instanceof TypeError) {
       sectionProductos.innerHTML = "";
       sectionProductos.appendChild(createElemError());
-    } else {
-      sectionProductos.innerHTML = "";
-      sectionProductos.appendChild(createElemEmpty());
     }
   }
 })();
