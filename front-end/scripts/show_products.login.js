@@ -3,41 +3,38 @@ import loader from "../util/loader.js";
 import {
   createElemItem,
   createElemCategory,
+  createElemError,
+  createElemEmpty,
 } from "../util/adminHtmlTemplates.js";
 
 const SHOW_ITEMS = 12;
-let count = 0;
 
 async function fetchProductsFromServer(p_elem_productsList) {
-  try {
-    const products = await client_service.getServerData(
-      `/products?_start=${count}&_limit=${SHOW_ITEMS}`
-    );
+  console.log(p_elem_productsList.children.length);
+  console.log(p_elem_productsList.children);
+  // const products = await client_service.getServerData(
+  //   `/products?_start=${
+  //     p_elem_productsList.children.length - 1
+  //   }&_limit=${SHOW_ITEMS}`
+  // );
 
-    products.forEach((p) => {
-      const elem_item = createElemItem(p.image, p.name, p.price);
-      p_elem_productsList.appendChild(elem_item);
-    });
-    return false;
-  } catch (error) {
-    console.log(error);
-
-    return true;
-  }
+  // products.forEach((p) => {
+  //   const elem_item = createElemItem(p.image, p.name, p.price);
+  //   p_elem_productsList.appendChild(elem_item);
+  // });
 }
 
 (async function showAllProducts() {
   const sectionProductos = document.querySelector("[data-productos]");
   // Creamos una categoria llamada 'All' para insertar ahí los items
   const elem_category = createElemCategory("All");
-  const elem_productsList = elem_category.querySelector(".productos__lista");
   sectionProductos.appendChild(elem_category);
+
+  const elem_productsList = elem_category.querySelector(".productos__lista");
   loader.showIn(elem_productsList);
 
   try {
-    while (await fetchProductsFromServer(elem_productsList)) {
-      await new Promise((resolve) => setTimeout(resolve, 5000));
-    }
+    await fetchProductsFromServer(elem_productsList);
 
     loader.removeFrom(elem_productsList);
 
@@ -45,7 +42,6 @@ async function fetchProductsFromServer(p_elem_productsList) {
       ".productos__button--ver-mas"
     );
     elemButton_verMas.addEventListener("click", () => {
-      count += SHOW_ITEMS;
       fetchProductsFromServer(elem_productsList);
     });
 
@@ -53,9 +49,13 @@ async function fetchProductsFromServer(p_elem_productsList) {
       ".productos__button--ver-menos"
     );
     elemButton_verMenos.addEventListener("click", () => {
-      if (count >= SHOW_ITEMS) {
-        count -= SHOW_ITEMS;
-        for (let i = 0; i < SHOW_ITEMS; i++) {
+      if (elem_productsList.children.length >= SHOW_ITEMS) {
+        // console.log(elem_productsList.children.length);
+        for (
+          let i = 0;
+          i < elem_productsList.children.length - SHOW_ITEMS;
+          i++
+        ) {
           elem_productsList.lastChild.remove();
         }
       }
@@ -69,5 +69,12 @@ async function fetchProductsFromServer(p_elem_productsList) {
     });
   } catch (err) {
     console.log(err);
+    if (err instanceof TypeError) {
+      sectionProductos.innerHTML = "";
+      sectionProductos.appendChild(createElemError());
+    } else {
+      sectionProductos.innerHTML = "";
+      sectionProductos.appendChild(createElemEmpty());
+    }
   }
 })();
