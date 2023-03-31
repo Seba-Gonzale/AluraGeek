@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -52,29 +52,54 @@
     </header>
 
     <main>
-      <section id="add-product" data-login>
-        <form action="" class="add-product__form">
-          <p>Agregar nuevo producto</p>
+      <section id="add-product" data-addProduct>
+        <form class="add-product__form" data-addProduct__form>
+          <legend class="add-product__title">Agregar nuevo producto</legend>
           <ul class="add-product__lista">
             <li class="add-product__item">
-              <input type="url" name="imgUrl" />
+              <input
+                class="add-product__url"
+                type="url"
+                name="imgUrl"
+                required
+              />
               <label for="imgUrl">URL de la imagen</label>
-              <input class="file" type="file" />
             </li>
             <li class="add-product__item">
-              <input name="name" type="text" />
+              <input
+                class="add-product__name"
+                name="name"
+                type="text"
+                required
+              />
               <label for="name">Nombre del Producto</label>
             </li>
             <li class="add-product__item">
-              <input name="price" type="number" />
+              <input
+                class="add-product__price"
+                name="price"
+                type="number"
+                required
+              />
               <label for="price">Precio del producto</label>
             </li>
             <li class="add-product__item">
-              <textarea name="description" cols="30" rows="10"></textarea>
+              <textarea
+                class="add-product__description"
+                name="description"
+                cols="30"
+                rows="5"
+              ></textarea>
               <label for="description">Descripción del producto</label>
             </li>
             <li class="add-product__item">
-              <button type="submit">Agregar producto</button>
+              <button
+                class="add-product__submit"
+                type="submit"
+                onsubmit="(event) => false;"
+              >
+                Agregar producto
+              </button>
             </li>
           </ul>
         </form>
@@ -122,5 +147,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
+    <script src="../scripts/add-product.js" type="module"></script>
   </body>
 </html>

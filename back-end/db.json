@@ -5,7 +5,7 @@
       "id": 0,
       "image": "http://localhost:3000/images/productos/vaso-stormtroopers.png",
       "name": "vaso de stormtroopers",
-      "price": 60.0,
+      "price": 60,
       "categoryId": 0
     },
     {
@@ -21,6 +21,160 @@
       "name": "Game Boy",
       "price": 30,
       "categoryId": 2
+    },
+    {
+      "id": 3,
+      "image": "http://localhost:3000/images/productos/camiseta-snes.png",
+      "name": "Camiseta SNES",
+      "price": 28,
+      "categoryId": 2
+    },
+    {
+      "id": 4,
+      "image": "http://localhost:3000/images/productos/darth-vader.png",
+      "name": "Muñecos Darth Vader",
+      "price": 10,
+      "categoryId": 0
+    },
+    {
+      "id": 5,
+      "image": "http://localhost:3000/images/productos/disfraz-picachu.png",
+      "name": "Disfraz Picachu",
+      "price": 100,
+      "categoryId": 2
+    },
+    {
+      "id": 6,
+      "image": "http://localhost:3000/images/productos/figura-sony.png",
+      "name": "Figura Sony",
+      "price": 12,
+      "categoryId": 2
+    },
+    {
+      "id": 7,
+      "image": "http://localhost:3000/images/productos/gafas-realidad-virtual.png",
+      "name": "Gafas de Realida Virtual",
+      "price": 150,
+      "categoryId": 2
+    },
+    {
+      "id": 8,
+      "image": "http://localhost:3000/images/productos/kylo-ren.png",
+      "name": "Kilo Ren",
+      "price": 10,
+      "categoryId": 0
+    },
+    {
+      "id": 9,
+      "image": "http://localhost:3000/images/productos/mando-xbox.png",
+      "name": "Mando Xbox",
+      "price": 50,
+      "categoryId": 1
+    },
+    {
+      "id": 10,
+      "image": "http://localhost:3000/images/productos/nintendo-switch.png",
+      "name": "Nintendo Switch",
+      "price": 200,
+      "categoryId": 1
+    },
+    {
+      "id": 11,
+      "image": "http://localhost:3000/images/productos/nintendo.png",
+      "name": "Nintendo",
+      "price": 60,
+      "categoryId": 1
+    },
+    {
+      "id": 12,
+      "image": "http://localhost:3000/images/productos/play-station-5.png",
+      "name": "Play Station 5",
+      "price": 210,
+      "categoryId": 1
+    },
+    {
+      "id": 13,
+      "image": "http://localhost:3000/images/productos/relog-retro.png",
+      "name": "Reloj retro",
+      "price": 20,
+      "categoryId": 2
+    },
+    {
+      "id": 14,
+      "image": "http://localhost:3000/images/productos/stormtroopers.png",
+      "name": "Figura Stormtroopers",
+      "price": 15,
+      "categoryId": 0
+    },
+    {
+      "id": 15,
+      "image": "http://localhost:3000/images/productos/xbox-serie-x.png",
+      "name": "Xbox serie X",
+      "price": 220,
+      "categoryId": 1
+    },
+    {
+      "id": 16,
+      "image": "http://localhost:3000/images/productos/yoda-bebe.png",
+      "name": "Bebé Yoda",
+      "price": 18,
+      "categoryId": 0
+    },
+    {
+      "id": 17,
+      "image": "http://localhost:3000/images/productos/yoda.png",
+      "name": "Figura Yoda",
+      "price": 16,
+      "categoryId": 0
+    },
+    {
+      "id": "92b4aa0a-f2b0-423d-83a9-b5fbc9fd84bf",
+      "image": "https://image.api.playstation.com/vulcan/ap/rnd/202112/2121/qrpfY71rsvMn6beyjgStw3cH.png",
+      "name": "Lego Star Wars: Arte hero de The Skywalker Saga",
+      "price": "60",
+      "description": "Juega las nueve entregas de la saga de Star Wars en un flamante videojuego de LEGO como ningún otro. Experimenta aventuras llenas de diversión, humor extravagante y la libertad de sumergirte por completo en la galaxia de LEGO Star Wars."
+    },
+    {
+      "id": "2dff6e63-f0bb-4a87-9e42-da34485809ca",
+      "image": "https://www.chicharo.com",
+      "name": "chicharo",
+      "price": "30",
+      "description": "ñññññññññ"
+    },
+    {
+      "id": "f277531d-56e5-4dcd-8aba-527ae30675f8",
+      "image": "https://www.chicharo.com",
+      "name": "chicharo",
+      "price": "30",
+      "description": "ñññññññññ"
+    },
+    {
+      "id": "d8898474-8322-4a53-b141-8e5a72ba3e52",
+      "image": "https://www.chicharo.com",
+      "name": "chicharo",
+      "price": "30",
+      "description": "ñññññññññ"
+    },
+    {
+      "id": "31bd21f4-d8f4-48c5-ba65-a08537633294",
+      "image": "https://www.chicharo.com",
+      "name": "chicharo",
+      "price": "30",
+      "description": "ñññññññññ"
+    },
+    {
+      "id": "97dca5ff-31b6-48d2-874b-38a62ee3028f",
+      "image": "https://www.chicharo.com",
+      "name": "chicharo",
+      "price": "30",
+      "description": "ñññññññññ"
+    },
+    {
+      "id": "aff2d8fc-a6fb-4d6c-8b8d-dcb466db909b",
+      "image": "https://www.chicharo.com",
+      "name": "chicharo",
+      "price": "30",
+      "description": "ñññññññññ"
     }
   ],
   "categorys": [

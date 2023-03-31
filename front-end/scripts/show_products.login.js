@@ -18,7 +18,6 @@ async function fetchProductsFromServer(p_elem_productsList) {
     const elem_item = createElemItem(p.image, p.name, p.price);
     p_elem_productsList.appendChild(elem_item);
     count++;
-    console.log(count);
   });
 }
 
@@ -59,7 +58,7 @@ async function fetchProductsFromServer(p_elem_productsList) {
       ".productos__button--agregar-producto"
     );
     elemButton_agregarProducto.addEventListener("click", () => {
-      location.href = "../pages/agregar-producto.html";
+      window.location.href = "../pages/add-product.html";
     });
   } catch (err) {
     console.log(err);

@@ -35,16 +35,18 @@ export function createElemItem(p_imgSrc, p_name, p_price) {
 
 export function createElemError() {
   const aux = document.createElement("aux");
+  const style = "text-align: center; font-weight: bold";
   aux.innerHTML = `
-      <p>¡no se pudo obtener los datos!</p>
+      <p style="${style}">¡no se pudo obtener los datos!</p>
     `;
   return aux.children[0];
 }
 
 export function createElemEmpty() {
   const aux = document.createElement("aux");
+  const style = "text-align: center; font-weight: bold";
   aux.innerHTML = `
-      <p>~no hay datos~</p>
+      <p style="${style}">~no hay datos~</p>
     `;
   return aux.children[0];
 }
