@@ -6,7 +6,9 @@ import {
   createElemError,
 } from "../util/adminHtmlTemplates.js";
 
+// Cantidad de items a mostrar
 const SHOW_ITEMS = 12;
+// desde que posición comenzar a traer los items
 let count = 0;
 
 async function fetchProductsFromServer(p_elem_productsList) {
@@ -31,10 +33,12 @@ async function fetchProductsFromServer(p_elem_productsList) {
   loader.showIn(elem_productsList);
 
   try {
+    // pasamos el elemento html que será la lista contenedora de los datos de cada producto del servidor
     await fetchProductsFromServer(elem_productsList);
 
     loader.removeFrom(elem_productsList);
 
+    // Asignacion de eventos a los botones "ver mas" y "ver menos"
     const elemButton_verMas = sectionProductos.querySelector(
       ".productos__button--ver-mas"
     );
@@ -54,6 +58,7 @@ async function fetchProductsFromServer(p_elem_productsList) {
       }
     });
 
+    // Boton que nos dirije a la pagina de Agregar Producto
     const elemButton_agregarProducto = sectionProductos.querySelector(
       ".productos__button--agregar-producto"
     );

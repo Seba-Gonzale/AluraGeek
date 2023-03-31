@@ -8,13 +8,16 @@ import loader from "../util/loader.js";
 
 // TODO: terminar el boton "ver mas"
 
+const url = new URLSearchParams(window.location.search);
+const productId = url.id;
+
 (async function showAllProductsForCategory() {
-  const sectionProductos = document.querySelector("[data-productos]");
+  const sectionProductos = document.querySelector("[data-products]");
   loader.showIn(sectionProductos);
 
   try {
     // Obtenemos la lista de categorías del servidor
-    const categorys = await client_service.getServerData("/categorys");
+    const categorys = await client_service.getServerData("/categorys/");
     loader.removeFrom(sectionProductos);
 
     categorys.forEach(async (category) => {
@@ -31,7 +34,7 @@ import loader from "../util/loader.js";
       );
 
       products.forEach((p) => {
-        const elem_item = createElemItem(p.image, p.name, p.price, p.id);
+        const elem_item = createElemItem(p.image, p.name, p.price);
         elem_productsList.appendChild(elem_item);
       });
 

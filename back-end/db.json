@@ -140,6 +140,13 @@
       "name": "Han Solo",
       "price": "67",
       "description": ""
+    },
+    {
+      "id": "58d37494-2954-4456-a031-9e0edfa93e0a",
+      "image": "https://www.zonanegativa.com/imagenes/2021/08/WTF-Marvel-Espana-Imagen-Destacada.jpg",
+      "name": "WTF! Marvel",
+      "price": "25",
+      "description": ""
     }
   ],
   "categorys": [
