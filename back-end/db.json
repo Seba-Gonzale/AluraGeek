@@ -135,46 +135,11 @@
       "description": "Juega las nueve entregas de la saga de Star Wars en un flamante videojuego de LEGO como ningún otro. Experimenta aventuras llenas de diversión, humor extravagante y la libertad de sumergirte por completo en la galaxia de LEGO Star Wars."
     },
     {
-      "id": "2dff6e63-f0bb-4a87-9e42-da34485809ca",
-      "image": "https://www.chicharo.com",
-      "name": "chicharo",
-      "price": "30",
-      "description": "ñññññññññ"
-    },
-    {
-      "id": "f277531d-56e5-4dcd-8aba-527ae30675f8",
-      "image": "https://www.chicharo.com",
-      "name": "chicharo",
-      "price": "30",
-      "description": "ñññññññññ"
-    },
-    {
-      "id": "d8898474-8322-4a53-b141-8e5a72ba3e52",
-      "image": "https://www.chicharo.com",
-      "name": "chicharo",
-      "price": "30",
-      "description": "ñññññññññ"
-    },
-    {
-      "id": "31bd21f4-d8f4-48c5-ba65-a08537633294",
-      "image": "https://www.chicharo.com",
-      "name": "chicharo",
-      "price": "30",
-      "description": "ñññññññññ"
-    },
-    {
-      "id": "97dca5ff-31b6-48d2-874b-38a62ee3028f",
-      "image": "https://www.chicharo.com",
-      "name": "chicharo",
-      "price": "30",
-      "description": "ñññññññññ"
-    },
-    {
-      "id": "aff2d8fc-a6fb-4d6c-8b8d-dcb466db909b",
-      "image": "https://www.chicharo.com",
-      "name": "chicharo",
-      "price": "30",
-      "description": "ñññññññññ"
+      "id": "370bf52e-b23f-44ca-8441-b8ec571c43e2",
+      "image": "https://hips.hearstapps.com/vidthumb/images/han-solo-curiosidades-1644582188.jpg",
+      "name": "Han Solo",
+      "price": "67",
+      "description": ""
     }
   ],
   "categorys": [

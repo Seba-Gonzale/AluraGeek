@@ -26,7 +26,7 @@ async function createProduct(p_imgUrl, p_name, p_price, p_description) {
 
   if (res_JSON.status < 400) {
     const res_JS = await res_JSON.json();
-    return res_JS;
+    return res_JSON;
   } else {
     throw new Error(`\nstatus: ${res_JSON.status}\n could not post the data`);
   }

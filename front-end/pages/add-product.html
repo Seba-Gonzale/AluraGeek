@@ -44,7 +44,11 @@
         </li>
 
         <li>
-          <button class="nav__button-login" type="button">
+          <button
+            class="nav__button-login"
+            type="button"
+            onclick="window.location.href = './login.html'"
+          >
             Menú Administrador
           </button>
         </li>
@@ -53,7 +57,7 @@
 
     <main>
       <section id="add-product" data-addProduct>
-        <form class="add-product__form" data-addProduct__form>
+        <form method="get" class="add-product__form" data-addProduct__form>
           <legend class="add-product__title">Agregar nuevo producto</legend>
           <ul class="add-product__lista">
             <li class="add-product__item">
@@ -93,11 +97,7 @@
               <label for="description">Descripción del producto</label>
             </li>
             <li class="add-product__item">
-              <button
-                class="add-product__submit"
-                type="submit"
-                onsubmit="(event) => false;"
-              >
+              <button class="add-product__submit" type="submit">
                 Agregar producto
               </button>
             </li>
