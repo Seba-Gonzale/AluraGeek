@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       rel="shortcut icon"
-      href="./public/favicon.svg"
+      href="../public/favicon.svg"
       type="image/svg+xml"
     />
 
@@ -19,12 +19,13 @@
     />
 
     <!-- CSS -->
-    <link rel="stylesheet" href="./css/reset.css" />
-    <link rel="stylesheet" href="./css/base.css" />
-    <link rel="stylesheet" href="./css/header.css" />
-    <link rel="stylesheet" href="./css/nav.css" />
-    <link rel="stylesheet" href="./css/products.css" />
-    <link rel="stylesheet" href="./css/footer.css" />
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/header.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link rel="stylesheet" href="../css/products.css" />
+    <link rel="stylesheet" href="../css/product-details/product-details.css" />
+    <link rel="stylesheet" href="../css/footer.css" />
 
     <title>Product Details</title>
   </head>
@@ -54,23 +55,14 @@
     </header>
 
     <main>
-      <section class="product" data-product>
-        <figure class="product__item">
-          <!-- * img del servidor -->
-          <img class="product__img" src="" alt="" />
-          <figcaption class="product__legend">
-            <!-- * datos del servidor -->
-            <h3 class="product__titulo"></h3>
-            <!-- * datos del servidor -->
-            <p class="product__parrafo"></p>
-          </figcaption>
-        </figure>
+      <section id="product" data-product>
+        <!-- * Aquí van elementos creados en product_details.js -->
       </section>
     </main>
 
     <footer class="footer-AluraGeek">
       <figure>
-        <img src="./public/Logo.png" alt="Logo AluraGeek" />
+        <img src="../public/Logo.png" alt="Logo AluraGeek" />
       </figure>
       <form class="footer-AluraGeek__form" action="">
         <p>Hable con nosotros</p>
@@ -110,6 +102,6 @@
       referrerpolicy="no-referrer"
     ></script>
 
-    <script src="./scripts/.js" type="module"></script>
+    <script src="../scripts/product_details.js" type="module"></script>
   </body>
 </html>

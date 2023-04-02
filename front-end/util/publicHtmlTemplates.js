@@ -25,7 +25,7 @@ export function createElemItem(p_imgSrc, p_name, p_price, p_id) {
         />
         <p class="productos__nombre">${p_name}</p>
         <p class="productos__precio">$${p_price}</p>
-        <a class="productos__detalle" href="#">
+        <a class="productos__detalle" href="./pages/product-details.html?id=${p_id}">
           Ver producto
         </a>
       </li>
@@ -48,5 +48,27 @@ export function createElemEmpty() {
   aux.innerHTML = `
       <p style="${style}">~no hay datos~</p>
     `;
+  return aux.children[0];
+}
+
+export function createElemProduct(p_product) {
+  const aux = document.createElement("aux");
+  const style = "text-align: center; font-weight: bold";
+  aux.innerHTML = `
+        <figure id="${
+          p_product.id
+        }" class="product__item product__item--main-product">
+          <img class="product__img" src="${p_product.image}" alt="${
+    p_product.name
+  }" />
+          <figcaption class="product__legend">
+            <h3 class="product__title">${p_product.name}</h3>
+            <div class="product__price">$${p_product.price}</div>
+            <p class="product__paragraph">${
+              p_product.description ?? "sin descripción"
+            }</p>
+          </figcaption>
+        </figure>
+        `;
   return aux.children[0];
 }

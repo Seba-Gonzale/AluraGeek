@@ -17,7 +17,7 @@ async function fetchProductsFromServer(p_elem_productsList) {
   );
 
   products.forEach((p) => {
-    const elem_item = createElemItem(p.image, p.name, p.price);
+    const elem_item = createElemItem(p.image, p.name, p.price, p.id);
     p_elem_productsList.appendChild(elem_item);
     count++;
   });

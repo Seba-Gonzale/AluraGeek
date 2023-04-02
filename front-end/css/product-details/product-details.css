@@ -1,0 +1,29 @@
+#product {
+  padding: 2rem var(--sidePadding);
+}
+
+.product__item--main-product {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  margin-bottom: 3rem;
+}
+
+.product__img {
+  width: 50%;
+}
+
+.product__legend {
+  flex: 1 0 auto;
+}
+.product__legend > * {
+  margin-bottom: 1rem;
+}
+
+.product__title {
+  font-size: 3.25rem;
+}
+.product__price {
+  font-weight: bold;
+}
