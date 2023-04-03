@@ -27,3 +27,9 @@
 .product__price {
   font-weight: bold;
 }
+
+.productos__lista--ver-todo {
+  /* El código base se encuentra en products.css */
+  flex-wrap: wrap;
+  overflow: visible;
+}

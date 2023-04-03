@@ -28,12 +28,17 @@ import loader from "../util/loader.js";
     sectionProduct.appendChild(elem_category);
 
     const moreProducts = await client_service.getServerData(
-      `/products?categoryId=${product.categoryId}&id_ne=${product.id}`
+      `/products?categoryId=${product.categoryId}&id_ne=${product.id}&_limit=6`
     );
 
     moreProducts.forEach((p) => {
       const elem_item = createElemItem(p.image, p.name, p.price, p.id);
       elem_productsList.appendChild(elem_item);
+    });
+
+    const buttonVerTodo = elem_category.querySelector(".productos__button-ver");
+    buttonVerTodo.addEventListener("click", (event) => {
+      elem_productsList.classList.toggle("productos__lista--ver-todo");
     });
   } catch (err) {
     console.log(err);
