@@ -1,4 +1,5 @@
 const loader = {};
+
 loader.showIn = (elemFather) => {
   const aux = document.createElement("div");
   aux.innerHTML = `
@@ -14,6 +15,7 @@ loader.showIn = (elemFather) => {
 
   elemFather.appendChild(aux.children[0]);
 };
+
 loader.removeFrom = (elemFather) => {
   elemFather.querySelector(".loader").remove();
   elemFather.style.position = "";

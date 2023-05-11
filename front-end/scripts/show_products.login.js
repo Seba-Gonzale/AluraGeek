@@ -1,24 +1,24 @@
 import client_service from "../api/client_service.js";
-import loader from "../util/loader.js";
+import loader from "../utils/loader.js";
 import {
   createElemItem,
   createElemCategory,
   createElemError,
-} from "../util/adminHtmlTemplates.js";
+} from "../utils/adminHtmlTemplates.js";
 
 // Cantidad de items a mostrar
 const SHOW_ITEMS = 12;
 // desde que posición comenzar a traer los items
 let count = 0;
 
-async function fetchProductsFromServer(p_elem_productsList) {
+async function fetchProductsFromServer(_elem_productsList) {
   const products = await client_service.getServerData(
     `/products?_start=${count}&_limit=${SHOW_ITEMS}`
   );
 
   products.forEach((p) => {
     const elem_item = createElemItem(p.image, p.name, p.price, p.id);
-    p_elem_productsList.appendChild(elem_item);
+    _elem_productsList.appendChild(elem_item);
     count++;
   });
 }
@@ -30,6 +30,7 @@ async function fetchProductsFromServer(p_elem_productsList) {
   sectionProductos.appendChild(elem_category);
 
   const elem_productsList = elem_category.querySelector(".productos__lista");
+
   loader.showIn(elem_productsList);
 
   try {

@@ -46,24 +46,33 @@
           />
         </li>
 
-        <li><button class="nav__button-login" type="button">Login</button></li>
+        <li><button class="nav__button-login" type="button">Log in</button></li>
       </ul>
     </header>
 
     <main>
+      <button onclick="localStorage.clear()">Reset</button>
       <section id="login" data-login>
-        <form action="" class="login__form">
+        <form class="login__form">
           <p class="login__form-title">Inicar Sesión</p>
           <ul class="login__form-list">
             <li class="login__form-items login__form-items--email">
-              <input type="email" placeholder="Escriba su correo electrónico" />
+              <input
+                type="email"
+                placeholder="Escriba su correo electrónico"
+                data-login="email"
+              />
             </li>
             <li class="login__form-items login__form-items--password">
-              <input type="password" placeholder="Escriba su contraseña" />
+              <input
+                type="password"
+                placeholder="Escriba su contraseña"
+                data-login="password"
+              />
             </li>
             <button
               class="login__form-items login__form-button--submit"
-              type="submit"
+              type="button"
               data-login__buttonSubmit
             >
               Entrar
@@ -120,7 +129,8 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="../scripts/hidden_login.js"></script>
+    <script src="../scripts/login.js" type="module"></script>
+    <script src="../scripts/hidden_login.js" type="module"></script>
     <script src="../scripts/show_products.login.js" type="module"></script>
   </body>
 </html>
