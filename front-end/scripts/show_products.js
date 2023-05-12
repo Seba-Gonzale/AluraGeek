@@ -3,8 +3,8 @@ import {
   createElemItem,
   createElemCategory,
   createElemError,
-} from "../util/publicHtmlTemplates.js";
-import loader from "../util/loader.js";
+} from "../utils/publicHtmlTemplates.js";
+import loader from "../utils/loader.js";
 
 // TODO: terminar el boton "ver mas"
 
