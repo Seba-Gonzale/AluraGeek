@@ -1,6 +1,6 @@
 import client_service from "../api/client_service.js";
-import loader from "../util/loader.js";
-import { validarImgUrl } from "../util/validarImgUrl.js";
+import loader from "../utils/loader.js";
+import { validarImgUrl } from "../utils/validarImgUrl.js";
 
 const form = document.querySelector("[data-addProduct__form]");
 
@@ -19,14 +19,16 @@ if (params.has("ok")) {
 
 // Insertamos el evento "submit" al formulario y la respectiva función a ejecutar
 form.addEventListener("submit", (event) => {
-  // prevenimos el envío de formulario y lo trabajamos nosotros
   event.preventDefault();
-
   const sectionAddProduct = document.querySelector("[data-addProduct]");
+  const input_imgUrl = form.querySelector(".add-product__url");
+  const imgUrl = input_imgUrl.value;
+  const name = form.querySelector(".add-product__name").value;
+  const price = form.querySelector(".add-product__price").value;
+  const description = form.querySelector(".add-product__description").value;
+
   // inserto un circulo de loading... en sectionAddProduct
   loader.showIn(sectionAddProduct);
-
-  const input_imgUrl = form.querySelector(".add-product__url");
   // validamos con validarImgUrl() si el valor de la URL es una imagen valida con una expresion regular
   // si !no es valido, entra en el if, carga el mensaje en el input, remueve el circulo de loading... y sale de la funcion del evento
   if (!validarImgUrl(input_imgUrl.value)) {
@@ -34,10 +36,6 @@ form.addEventListener("submit", (event) => {
     loader.removeFrom(sectionAddProduct);
     return;
   }
-  const imgUrl = input_imgUrl.value;
-  const name = form.querySelector(".add-product__name").value;
-  const price = form.querySelector(".add-product__price").value;
-  const description = form.querySelector(".add-product__description").value;
 
   client_service
     .createProduct(imgUrl, name, price, description)

@@ -21,6 +21,9 @@ body {
 a {
   text-decoration: none;
 }
+a:visited {
+  color: inherit;
+}
 b {
   font-weight: bold;
 }
@@ -64,8 +67,4 @@ ul {
   100% {
     transform: rotate(360deg);
   }
-}
-
-a {
-  color: rgba(255, 0, 242, 0.5);
 }

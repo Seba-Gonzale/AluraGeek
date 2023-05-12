@@ -147,6 +147,13 @@
       "name": "WTF! Marvel",
       "price": "25",
       "description": ""
+    },
+    {
+      "id": "fad0356d-9171-4e7a-91c9-093b6be593ca",
+      "image": "https://static.wikia.nocookie.net/dcandmarvelheroes/images/d/d9/Flash_Vol_4_1_Textless.jpg/revision/latest?cb=20111204171645&path-prefix=es",
+      "name": "Flash",
+      "price": "69",
+      "description": "Comic"
     }
   ],
   "categorys": [
