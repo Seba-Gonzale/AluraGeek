@@ -4,6 +4,5 @@ export function validarImgUrl(url) {
     /(http(s?):)([/|.|\w|\s|-])*\.(?:jpg|jpeg|png|gif|webp|bmp|svg|ico)/;
 
   // Verificar si la URL coincide con la expresión regular
-  console.log(url);
   return expresion.test(url);
 }

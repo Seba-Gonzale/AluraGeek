@@ -36,7 +36,14 @@ import loader from "../utils/loader.js";
       });
 
       loader.removeFrom(elem_productsList);
-      // Añadimos element_category al elemento del DOM data-products
+
+      console.log(location.href);
+      const button_verTodo = elem_category.querySelector(
+        "[data-button='ver-todo']"
+      );
+      button_verTodo.addEventListener("click", () => {
+        location.href = `/front-end/pages/category.html?categoryId=${category.id}`;
+      });
     });
   } catch (err) {
     console.log(err);

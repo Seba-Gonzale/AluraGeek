@@ -1,6 +1,6 @@
-.productos {
+/* .productos {
   display: none;
-}
+} */
 
 .productos__listar-categoria {
   text-align: center;
@@ -28,12 +28,14 @@
   padding: 0.5rem 2rem 0.5rem 0.5rem;
   width: 100%;
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 .productos__button--ver-menos {
   padding: 0.5rem 2rem 0.5rem 0.5rem;
   width: 100%;
   border: 2px solid var(--mainColor);
   margin-bottom: 1rem;
+  cursor: pointer;
 }
 
 .productos__button-ver:hover {

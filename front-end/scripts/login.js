@@ -5,17 +5,21 @@ function isTheUserLoggedIn() {
   if (localStorageAvailable()) {
     const sectionLogin = document.querySelector("[data-login]");
     const sectionProductos = document.querySelector("[data-productos]");
+    const buttonLogIn = document.querySelector(".nav__button-login");
     if (localStorage.loginEmail !== undefined) {
-      // const inputEmail = document.querySelector("[data-login='email']");
-      // const inputPassword = document.querySelector("[data-login='password']");
-      // inputEmail.value = localStorage.getItem("loginEmail");
-      // inputPassword.value = localStorage.getItem("loginPassword");
-      sectionProductos.style.display = "block";
-      sectionLogin.style.display = "";
-    } else {
-      sectionLogin.style.display = "block";
-      sectionProductos.style.display = "";
+      console.log(buttonLogIn);
+      buttonLogIn.textContent = "Log out";
+      buttonLogIn.addEventListener("click", () => {
+        localStorage.clear();
+        location.reload();
+      });
+      sectionProductos.classList.toggle("displayNone");
+      sectionLogin.classList.toggle("displayNone");
     }
+    // else {
+    //   sectionLogin.style.display = "block";
+    //   sectionProductos.style.display = "";
+    // }
   }
 }
 
@@ -31,5 +35,6 @@ buttonSubmit.addEventListener("click", (event) => {
   const inputPassword = document.querySelector("[data-login='password']");
   localStorage.setItem("loginEmail", inputEmail);
   localStorage.setItem("loginPassword", inputPassword);
-  setTimeout(() => isTheUserLoggedIn(), 0);
+  isTheUserLoggedIn();
+  loader.removeFrom(sectionLogin);
 });

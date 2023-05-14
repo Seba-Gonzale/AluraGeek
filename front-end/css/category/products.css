@@ -1,0 +1,7 @@
+.productos__lista {
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.productos__button-ver {
+  display: none;
+}

@@ -83,6 +83,29 @@
               <label for="name">Nombre del Producto</label>
             </li>
             <li class="add-product__item">
+              <select
+                name="categorys-list"
+                id="categorys-list"
+                class="add-product__categorys"
+              >
+                <!-- * Aquí iran las categorias traidas del servidor -->
+              </select>
+              <label for="categorys-list">Categoria del producto</label>
+            </li>
+            <!-- El siguiente item solo se muestra si se selecciona "nueva categoria" en el elemento <select>-->
+            <li
+              class="add-product__item"
+              style="display: none"
+              data-new-category
+            >
+              <input
+                type="text"
+                name="new-category"
+                data-input="new-category"
+              />
+              <label for="new-category">Nueva categoría</label>
+            </li>
+            <li class="add-product__item">
               <input
                 class="add-product__price"
                 name="price"

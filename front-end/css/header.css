@@ -29,11 +29,16 @@
   font-weight: bold;
 }
 .header__button-consolas {
-  color: #fff;
   background-color: var(--mainColor);
   padding: 1rem;
   border: none;
   transition: text-shadow 0.2s;
+}
+.header__button-consolas a {
+  color: #fff;
+}
+.header__button-consolas a:visited {
+  color: #fff;
 }
 .header__button-consolas:hover {
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);

@@ -4,7 +4,7 @@ export function createElemCategory(p_categoryName) {
       <div class="productos__listar-categoria">
         <div class="productos__box-titulo-button">
           <h3 class="productos__titulo">${p_categoryName}</h3>
-          <button class="productos__button-ver" type="button">
+          <button class="productos__button-ver" type="button" data-button="ver-todo">
             Ver todo<span>&#9;➔</span>
           </button>
         </div>
