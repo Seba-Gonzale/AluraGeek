@@ -38,6 +38,30 @@
   background-color: #fff;
 }
 
+.login__form-items--password {
+  position: relative;
+  /* padding: 0 3rem 0 0.75rem; */
+}
+.login__form-items--password input {
+  padding: 0 3rem 0 0.75rem;
+}
+
+.login__password--ver {
+  position: absolute;
+  /* border-radius: 1rem 0 0 1rem; */
+  right: 0rem;
+  width: 3rem;
+  height: 100%;
+  cursor: pointer;
+  background-image: url("../../public/ojos.png");
+  background-repeat: no-repeat;
+  background-position: 20% 50%;
+  background-size: 250%;
+}
+.login__password--ocultar {
+  background-position: 86% 50%;
+}
+
 .login__form-button--submit {
   width: 100%;
   color: #fff;

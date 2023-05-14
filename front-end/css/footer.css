@@ -15,6 +15,14 @@
   margin: 1rem 0;
 }
 
+.footer-AluraGeek__field input,
+.footer-AluraGeek__field textarea {
+  width: 100%;
+  padding: 0.5rem;
+  padding-top: 1.5rem;
+  z-index: 3;
+}
+
 .footer-AluraGeek__field label {
   position: absolute;
   top: 0.4rem;
@@ -23,11 +31,23 @@
   /* display: none; */
   color: rgba(0, 0, 0, 0.5);
   font-size: small;
+  user-select: none;
+  z-index: 1;
 }
-.footer-AluraGeek__field input,
-.footer-AluraGeek__field textarea {
-  padding: 0.5rem;
-  padding-top: 1.5rem;
+.footer-AluraGeek__field label[class="footer-AluraGeek__maxCaracteres"] {
+  left: 80%;
+}
+
+.footer-AluraGeek__button--submit {
+  padding: 0.5rem 1rem;
+  background-color: var(--mainColor);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+.footer-AluraGeek__button--submit:hover {
+  outline: 5px solid white;
+  font-weight: bold;
 }
 
 /* Footer Developer */ /**/ /* Footer Developer */
