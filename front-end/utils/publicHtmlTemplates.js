@@ -17,6 +17,7 @@ export function createElemCategory(p_categoryName) {
 
 export function createElemItem(p_imgSrc, p_name, p_price, p_id) {
   const aux = document.createElement("aux");
+  console.log(location.protocol + location.host);
   aux.innerHTML = `
       <li id="${p_id}" class="productos__items">
         <img
@@ -24,10 +25,16 @@ export function createElemItem(p_imgSrc, p_name, p_price, p_id) {
           alt="${p_name}"
         />
         <p class="productos__nombre">${p_name}</p>
-        <p class="productos__precio">$${p_price}</p>
-        <a class="productos__detalle" href="./pages/product-details.html?id=${p_id}">
+        <p class="productos__precio" onclick="console.log('hola')">$${p_price}</p>
+        <button class="productos__detalle" onclick="location.href = ${
+          location.protocol +
+          `//` +
+          location.host +
+          `/front-end/pages/product-details.html?id=` +
+          p_id
+        }">
           Ver producto
-        </a>
+        </button>
       </li>
     `;
   return aux.children[0];

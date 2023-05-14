@@ -4,8 +4,7 @@ import {
   createElemCategory,
   createElemError,
   createElemProduct,
-} from "../util/publicHtmlTemplates.js";
-import loader from "../util/loader.js";
+} from "../utils/publicHtmlTemplates.js";
 
 // TODO: terminar el boton "ver mas"
 

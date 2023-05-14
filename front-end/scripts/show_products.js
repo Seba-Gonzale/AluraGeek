@@ -6,8 +6,6 @@ import {
 } from "../utils/publicHtmlTemplates.js";
 import loader from "../utils/loader.js";
 
-// TODO: terminar el boton "ver mas"
-
 (async function showAllProductsForCategory() {
   const sectionProductos = document.querySelector("[data-productos]");
   loader.showIn(sectionProductos);
@@ -37,7 +35,6 @@ import loader from "../utils/loader.js";
 
       loader.removeFrom(elem_productsList);
 
-      console.log(location.href);
       const button_verTodo = elem_category.querySelector(
         "[data-button='ver-todo']"
       );
