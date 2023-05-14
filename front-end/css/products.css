@@ -63,7 +63,11 @@
   font-size: 0.875rem;
   font-weight: 500;
 }
-.productos__precio,
+.productos__precio {
+  color: #464646;
+  font-weight: bold;
+}
 .productos__detalle {
+  color: var(--mainColor);
   font-weight: bold;
 }

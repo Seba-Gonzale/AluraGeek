@@ -51,8 +51,7 @@
     </header>
 
     <main>
-      <button onclick="localStorage.clear()">Reset</button>
-      <section id="login" data-login>
+      <section class="login" data-login>
         <form class="login__form">
           <p class="login__form-title">Inicar Sesión</p>
           <ul class="login__form-list">
@@ -81,7 +80,7 @@
         </form>
       </section>
 
-      <section class="productos" data-productos>
+      <section class="productos displayNone" data-productos>
         <!-- -->
         <!--* Aqui va la lista de javascript -->
         <!--  -->
@@ -130,7 +129,6 @@
       referrerpolicy="no-referrer"
     ></script>
     <script src="../scripts/login.js" type="module"></script>
-    <script src="../scripts/hidden_login.js" type="module"></script>
-    <script src="../scripts/show_products.login.js" type="module"></script>
+    <script src="../scripts/login.show_products.js" type="module"></script>
   </body>
 </html>

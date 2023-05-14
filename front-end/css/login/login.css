@@ -1,12 +1,15 @@
-#login {
+.login {
   background-color: #e5e5e5;
   /* display: flex; */
-  display: none;
+  display: block;
   position: relative;
 
   height: 30rem;
   overflow: hidden;
   transition: height 0.5s;
+}
+.displayNone {
+  display: none;
 }
 
 .login__form {
@@ -40,6 +43,7 @@
   color: #fff;
   font-weight: bold;
   background-color: #2a7ae4;
+  cursor: pointer;
 }
 
 /* Footer AluraGeek */ /** Footer AluraGeek */

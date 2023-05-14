@@ -23,7 +23,8 @@
 }
 
 .add-product__item input,
-.add-product__item textarea {
+.add-product__item textarea,
+.add-product__item select {
   padding-top: 1.3rem;
   z-index: 2;
   background-color: transparent;

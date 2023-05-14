@@ -27,4 +27,5 @@
   border: 1px solid var(--mainColor);
   background-color: #fff;
   padding: 0.8rem 4rem;
+  cursor: pointer;
 }
