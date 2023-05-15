@@ -97,3 +97,30 @@ form.addEventListener("submit", async (event) => {
       location.href = "../pages/add-product.html?err";
     });
 });
+
+// *********************************************
+
+// const buttonAddFile = document.querySelector(".add-product__addFile");
+// const imageFile = document.querySelector("[name='file']");
+// console.log(imageFile);
+// imageFile.addEventListener("change", (event) => {
+//   const file = event.target.files[0];
+
+//   if (file) {
+//     const reader = new FileReader();
+
+//     reader.onload = (e) => {
+//       console.log(e.target);
+//       const imagePath = e.target.result;
+//       // console.log(imagePath);
+//       const base64Data = imagePath.split(",")[1];
+//       const fileSizeInBytes = window.atob(base64Data).length;
+//       const fileSizeInMB = fileSizeInBytes / 1024;
+
+//       // console.log("Tamaño en kilobytes:", fileSizeInMB);
+//       form.insertAdjacentHTML("afterend", `<img src=${imagePath} alt="hola"/>`);
+//     };
+
+//     reader.readAsDataURL(file);
+//   }
+// });

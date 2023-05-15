@@ -59,7 +59,7 @@
   background-size: 250%;
 }
 .login__password--ocultar {
-  background-position: 86% 50%;
+  background-position: 87.5% 50%;
 }
 
 .login__form-button--submit {
@@ -68,6 +68,14 @@
   font-weight: bold;
   background-color: #2a7ae4;
   cursor: pointer;
+}
+
+.login__form__loginError {
+  display: none;
+  text-align: center;
+  margin-top: 10px;
+  font-weight: bold;
+  color: red;
 }
 
 /* Footer AluraGeek */ /** Footer AluraGeek */

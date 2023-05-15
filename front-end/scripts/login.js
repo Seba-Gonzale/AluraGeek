@@ -3,6 +3,8 @@ import loader from "../utils/loader.js";
 import validarEmail from "../utils/validarEmail.js";
 
 const sectionLogin = document.querySelector("[data-login]");
+const formLogin = sectionLogin.querySelector(".login__form");
+const divLoginError = sectionLogin.querySelector(".login__form__loginError");
 const buttonSubmit = sectionLogin.querySelector("[data-login__buttonSubmit]");
 const spanVerPass = sectionLogin.querySelector(".login__password--ver");
 
@@ -40,13 +42,15 @@ spanVerPass.addEventListener("click", (e) => {
   }
 });
 
+formLogin.addEventListener("submit", (e) => e.preventDefault());
 buttonSubmit.addEventListener("click", (event) => {
   event.preventDefault();
   loader.showIn(sectionLogin);
 
   const inputEmail = document.querySelector("[data-login='email']");
   const inputPassword = document.querySelector("[data-login='password']");
-  if (!validarEmail(inputEmail.value)) {
+
+  if (!validarEmail(inputEmail.value.trim())) {
     inputEmail.setCustomValidity("Ingrese un email valido.");
     inputEmail.reportValidity();
     loader.removeFrom(sectionLogin);
@@ -64,8 +68,18 @@ buttonSubmit.addEventListener("click", (event) => {
     inputPassword.setCustomValidity("");
   }
 
-  localStorage.setItem("loginEmail", inputEmail);
-  localStorage.setItem("loginPassword", inputPassword);
-  isTheUserLoggedIn();
+  if (
+    inputEmail.value.trim() === "admin@admin.com" &&
+    inputPassword.value.trim() === "admin"
+  ) {
+    localStorage.setItem("loginEmail", inputEmail);
+    localStorage.setItem("loginPassword", inputPassword);
+    divLoginError.style.display = "";
+    isTheUserLoggedIn();
+  } else {
+    sectionLogin.style["background-color"] = "pink";
+    sectionLogin.style.border = "1px solid red";
+    divLoginError.style.display = "block";
+  }
   loader.removeFrom(sectionLogin);
 });
