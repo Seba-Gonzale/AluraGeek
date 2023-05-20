@@ -1,6 +1,6 @@
 import localStorageAvailable from "../utils/localStorageAvailable.js";
 import loader from "../utils/loader.js";
-import validarEmail from "../utils/validarEmail.js";
+import { validarEmail } from "../utils/validaciones.js";
 
 const sectionLogin = document.querySelector("[data-login]");
 const formLogin = sectionLogin.querySelector(".login__form");

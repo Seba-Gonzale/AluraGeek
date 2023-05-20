@@ -30,6 +30,34 @@
   background-color: transparent;
   border: 1px solid gray;
 }
+.add-product__item--file {
+  padding: 1.3rem 0;
+  background-color: transparent;
+  border: 1px solid gray;
+  text-align: center;
+}
+.add-product__item--file:hover {
+  cursor: pointer;
+  background-color: lightgray;
+}
+
+.add-product__item .add-product__file {
+  /* visibility: hidden; */
+  display: none;
+  border: none;
+}
+
+.add-product__dragIcon {
+  filter: grayscale(100%);
+  opacity: 25%;
+  margin: 0% auto;
+  width: 20%;
+}
+.add-product__dragIcon--withFile {
+  filter: none;
+  opacity: 100%;
+  transition: all 0.8s;
+}
 
 .add-product__item label {
   position: absolute;
@@ -41,7 +69,13 @@
   z-index: 1;
 }
 
-button {
+.add-product__item label[for="file"] {
+  position: static;
+  margin-top: 0.5rem;
+  font-size: medium;
+}
+
+.add-product__submit {
   background-color: #2a7ae4;
   color: white;
   border: none;

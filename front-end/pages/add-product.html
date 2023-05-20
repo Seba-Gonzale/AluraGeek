@@ -64,14 +64,21 @@
         <form method="get" class="add-product__form" data-addProduct__form>
           <legend class="add-product__title">Agregar nuevo producto</legend>
           <ul class="add-product__lista">
-            <li class="add-product__item">
+            <li class="add-product__item add-product__item--file">
+              <img
+                src="../public/dragAndDrop.png"
+                alt="Arrastre y suelte aquí una imagen"
+                class="add-product__dragIcon"
+              />
               <input
-                class="add-product__url"
-                type="url"
-                name="imgUrl"
+                class="add-product__file"
+                type="file"
+                name="file"
                 required
               />
-              <label for="imgUrl">URL de la imagen</label>
+              <label for="file" class="add-product__label--file"
+                >Haz click o arrastra y suelta la imagen</label
+              >
             </li>
             <li class="add-product__item">
               <input
@@ -174,6 +181,6 @@
       crossorigin="anonymous"
       referrerpolicy="no-referrer"
     ></script>
-    <script src="../scripts/add-product.js" type="module"></script>
+    <script src="../scripts/add-product/add-product.js" type="module"></script>
   </body>
 </html>
