@@ -1,10 +1,10 @@
-import client_service from "../api/client_service.js";
-import loader from "../utils/loader.js";
+import client_service from "../../api/client_service.js";
+import loader from "../../utils/loader.js";
 import {
   createElemItem,
   createElemCategory,
   createElemError,
-} from "../utils/adminHtmlTemplates.js";
+} from "../../utils/adminHtmlTemplates.js";
 
 // Cantidad de items a mostrar
 const SHOW_ITEMS = 12;

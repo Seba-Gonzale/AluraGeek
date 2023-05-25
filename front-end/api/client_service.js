@@ -13,13 +13,15 @@ async function getServerData(query) {
 }
 
 async function createProduct(props) {
-  const { imgUrl, name, categoryId, price, description } = props;
+  const { image, name, categoryId, price, description } = props;
+  console.log(image);
+
   const res_JSON = await fetch(`${serverDomain}/products`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
       id: uuid.v4(),
-      image: imgUrl,
+      image: image,
       name: name,
       price: price,
       categoryId: categoryId,

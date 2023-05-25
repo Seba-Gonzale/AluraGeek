@@ -1,14 +1,15 @@
 import client_service from "../../api/client_service.js";
 import loader from "../../utils/loader.js";
 import { validarImgUrl, validarEmail } from "../../utils/validaciones.js";
-import searchImageField from "./searchImageField.js";
+import validateImageField from "./validateImageField.js";
 
 const elem_form = document.querySelector("[data-addProduct__form]");
 const elem_select = elem_form.querySelector(".add-product__categorys");
 
+// Creación de lista de categorias a seleccionar en la creacion del nuevo producto
 async function createCategorysList(elem_select) {
   const categorys = await client_service.getServerData("/categorys");
-
+  // ƒ(x): Si escoje "crear nueva categoría" se procede a pedir el nombre de la nueva categoria con un <input/>
   function newCategory(_new) {
     const newField = document.querySelector("[data-new-category]");
     if (_new) {
@@ -35,7 +36,7 @@ async function createCategorysList(elem_select) {
   });
 }
 
-// Insertamos el evento "submit" al formulario y la respectiva función a ejecutar
+// Evento "submit" del formulario y la ƒ(x) a ejecutar
 elem_form.addEventListener("submit", async (event) => {
   event.preventDefault();
   const sectionAddProduct = document.querySelector("[data-addProduct]");
@@ -50,6 +51,7 @@ elem_form.addEventListener("submit", async (event) => {
   // inserto un circulo de loading... en sectionAddProduct
   loader.showIn(sectionAddProduct);
 
+  // ƒ(x): transforma la imagen en un url de datos (string)
   function transformToDataUrl(file) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
@@ -58,7 +60,6 @@ elem_form.addEventListener("submit", async (event) => {
       reader.readAsDataURL(file);
     });
   }
-
   const image = await transformToDataUrl(file);
 
   let categoryId = select_category.value;
@@ -94,7 +95,7 @@ elem_form.addEventListener("submit", async (event) => {
   }
 });
 
-searchImageField(elem_form);
+validateImageField(elem_form);
 createCategorysList(elem_select);
 
 // Como luego del "POST" en el evento "submit" del formulario la pagina se recarga aunque utilice event.preventDefault()
@@ -109,30 +110,3 @@ if (params.has("ok")) {
   elem_form.innerHTML +=
     "<p style='color: red; text-align: center; font-weight: bold'>No se pudo crear el producto!</p>";
 }
-
-// *********************************************
-
-// const buttonAddFile = document.querySelector(".add-product__addFile");
-// const imageFile = document.querySelector("[name='file']");
-// console.log(imageFile);
-// imageFile.addEventListener("change", (event) => {
-//   const file = event.target.files[0];
-
-//   if (file) {
-//     const reader = new FileReader();
-
-//     reader.onload = (e) => {
-//       console.log(e.target);
-//       const imagePath = e.target.result;
-//       // console.log(imagePath);
-//       const base64Data = imagePath.split(",")[1];
-//       const fileSizeInBytes = window.atob(base64Data).length;
-//       const fileSizeInMB = fileSizeInBytes / 1024;
-
-//       // console.log("Tamaño en kilobytes:", fileSizeInMB);
-//       elem_form.insertAdjacentHTML("afterend", `<img src=${imagePath} alt="hola"/>`);
-//     };
-
-//     reader.readAsDataURL(file);
-//   }
-// });

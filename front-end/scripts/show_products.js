@@ -17,30 +17,32 @@ import loader from "../utils/loader.js";
 
     categorys.forEach(async (category) => {
       // Traemos la lista de productos de cada categoría
-      const elem_category = createElemCategory(category.name);
-      const elem_productsList =
-        elem_category.querySelector(".productos__lista");
-      sectionProductos.appendChild(elem_category);
-
-      loader.showIn(elem_productsList);
-
       const products = await client_service.getServerData(
         `/products?categoryId=${category.id}`
       );
 
-      products.forEach((p) => {
-        const elem_item = createElemItem(p.image, p.name, p.price, p.id);
-        elem_productsList.appendChild(elem_item);
-      });
+      if (products.length !== 0) {
+        const elem_category = createElemCategory(category.name);
+        const elem_productsList =
+          elem_category.querySelector(".productos__lista");
+        sectionProductos.appendChild(elem_category);
 
-      loader.removeFrom(elem_productsList);
+        loader.showIn(elem_productsList);
 
-      const button_verTodo = elem_category.querySelector(
-        "[data-button='ver-todo']"
-      );
-      button_verTodo.addEventListener("click", () => {
-        location.href = `/front-end/pages/category.html?categoryId=${category.id}`;
-      });
+        products.forEach((p) => {
+          const elem_item = createElemItem(p.image, p.name, p.price, p.id);
+          elem_productsList.appendChild(elem_item);
+        });
+
+        loader.removeFrom(elem_productsList);
+
+        const button_verTodo = elem_category.querySelector(
+          "[data-button='ver-todo']"
+        );
+        button_verTodo.addEventListener("click", () => {
+          location.href = `/front-end/pages/category.html?categoryId=${category.id}`;
+        });
+      }
     });
   } catch (err) {
     console.log(err);

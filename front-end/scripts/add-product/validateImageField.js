@@ -1,6 +1,6 @@
 import { validarImagen } from "../../utils/validaciones.js";
 
-export default function searchImageField(elem_form) {
+export default function validateImageField(elem_form) {
   const elem_inputFile = elem_form.querySelector(".add-product__file");
   const elem_fieldFile = elem_form.querySelector(".add-product__item--file");
 
@@ -20,6 +20,7 @@ export default function searchImageField(elem_form) {
         }
         elem_fileLabel.textContent = `${elem_inputFile.files[0].name}`;
         elem_fileLabel.style.color = "var(--mainColor)";
+        elem_inputFile.setCustomValidity("");
       } else {
         elem_fieldFile.style.backgroundColor = "#ffebeb";
         if (
@@ -29,7 +30,11 @@ export default function searchImageField(elem_form) {
         }
         elem_fileLabel.textContent = `Imagen no valida! intenta de nuevo`;
         elem_fileLabel.style.color = "red";
+        elem_inputFile.setCustomValidity("Imagen no valida! intenta de nuevo");
       }
+    } else {
+      elem_inputFile.setCustomValidity("Escoja una imagen");
+      console.log(elem_inputFile);
     }
   }
 
