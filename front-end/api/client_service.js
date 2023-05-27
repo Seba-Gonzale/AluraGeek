@@ -39,7 +39,6 @@ async function createProduct(props) {
 
 async function createCategory(categoryName) {
   const categorys = await getServerData("/categorys");
-  console.log(categoryName);
   const repeatedName = categorys.find((elem) => elem.name === categoryName);
   if (repeatedName === undefined) {
     const res_JSON = await fetch(`${serverDomain}/categorys`, {

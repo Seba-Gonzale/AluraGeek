@@ -50,7 +50,6 @@ elem_form.addEventListener("submit", async (event) => {
 
   // inserto un circulo de loading... en sectionAddProduct
   loader.showIn(sectionAddProduct);
-
   // ƒ(x): transforma la imagen en un url de datos (string)
   function transformToDataUrl(file) {
     return new Promise((resolve, reject) => {
@@ -59,6 +58,10 @@ elem_form.addEventListener("submit", async (event) => {
       reader.onerror = (e) => reject(e);
       reader.readAsDataURL(file);
     });
+  }
+  if (!validateImageField("submit")) {
+    loader.removeFrom(sectionAddProduct);
+    return;
   }
   const image = await transformToDataUrl(file);
 
@@ -95,7 +98,7 @@ elem_form.addEventListener("submit", async (event) => {
   }
 });
 
-validateImageField(elem_form);
+validateImageField();
 createCategorysList(elem_select);
 
 // Como luego del "POST" en el evento "submit" del formulario la pagina se recarga aunque utilice event.preventDefault()

@@ -26,7 +26,7 @@ async function fetchProductsFromServer(_elem_productsList) {
 (async function showAllProducts() {
   const sectionProductos = document.querySelector("[data-productos]");
   // Creamos una categoria llamada 'All' para insertar ahí los items
-  const elem_category = createElemCategory("All");
+  const elem_category = createElemCategory("Todos");
   sectionProductos.appendChild(elem_category);
 
   const elem_productsList = elem_category.querySelector(".productos__lista");

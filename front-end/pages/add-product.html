@@ -74,7 +74,7 @@
                 class="add-product__file"
                 type="file"
                 name="file"
-                required
+                accept="image/*"
               />
               <label for="file" class="add-product__label--file"
                 >Haz click o arrastra y suelta la imagen</label
@@ -94,6 +94,7 @@
                 name="categorys-list"
                 id="categorys-list"
                 class="add-product__categorys"
+                required
               >
                 <!-- * Aquí iran las categorias traidas del servidor -->
               </select>
@@ -127,6 +128,8 @@
                 name="description"
                 cols="30"
                 rows="5"
+                maxlength="150"
+                required
               ></textarea>
               <label for="description">Descripción del producto</label>
             </li>
