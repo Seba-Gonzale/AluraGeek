@@ -5,20 +5,26 @@
   align-content: center;
 
   padding: 1rem var(--sidePadding);
+  position: relative;
 }
 .nav__busqueda {
-  width: 33%;
-}
-.nav__input-busqueda {
   background-image: url("../public/lupa.svg");
   background-repeat: no-repeat;
   background-size: auto 70%;
   background-position: 95% 50%;
 
   background-color: #f5f5f5;
-  padding: 0.5rem;
+  width: 33%;
   padding-right: 3rem;
   border-radius: 20px;
+}
+.nav__busqueda:hover {
+  cursor: pointer;
+}
+.nav__input-busqueda {
+  background-color: #f5f5f5;
+  border-radius: 20px;
+  padding: 0.5rem;
   border: none;
   width: 100%;
 }
