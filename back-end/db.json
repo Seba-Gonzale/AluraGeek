@@ -132,6 +132,7 @@
       "image": "https://image.api.playstation.com/vulcan/ap/rnd/202112/2121/qrpfY71rsvMn6beyjgStw3cH.png",
       "name": "Lego Star Wars: Arte hero de The Skywalker Saga",
       "price": "60",
+      "categoryId": 0,
       "description": "Juega las nueve entregas de la saga de Star Wars en un flamante videojuego de LEGO como ningún otro. Experimenta aventuras llenas de diversión, humor extravagante y la libertad de sumergirte por completo en la galaxia de LEGO Star Wars."
     },
     {
@@ -139,6 +140,7 @@
       "image": "https://hips.hearstapps.com/vidthumb/images/han-solo-curiosidades-1644582188.jpg",
       "name": "Han Solo",
       "price": "67",
+      "categoryId": 0,
       "description": ""
     },
     {
@@ -146,6 +148,7 @@
       "image": "https://www.zonanegativa.com/imagenes/2021/08/WTF-Marvel-Espana-Imagen-Destacada.jpg",
       "name": "WTF! Marvel",
       "price": "25",
+      "categoryId": 5,
       "description": ""
     },
     {
