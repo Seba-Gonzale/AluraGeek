@@ -15,7 +15,7 @@
 }
 
 .product__legend {
-  flex: 1 0 auto;
+  flex: 1 1 50%;
 }
 .product__legend > * {
   margin-bottom: 1rem;
@@ -26,6 +26,9 @@
 }
 .product__price {
   font-weight: bold;
+}
+.product__paragraph {
+  line-height: 1.5;
 }
 
 .productos__lista--ver-todo {

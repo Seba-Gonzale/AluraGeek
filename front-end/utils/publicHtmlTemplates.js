@@ -72,9 +72,7 @@ export function createElemProduct(p_product) {
           <figcaption class="product__legend">
             <h3 class="product__title">${p_product.name}</h3>
             <div class="product__price">$${p_product.price}</div>
-            <p class="product__paragraph">${
-              p_product.description ?? "sin descripción"
-            }</p>
+            <p class="product__paragraph">${p_product.description ?? ""}</p>
           </figcaption>
         </figure>
         `;

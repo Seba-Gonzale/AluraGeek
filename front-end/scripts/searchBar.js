@@ -42,7 +42,10 @@ inputSearchBar.addEventListener("input", async (e) => {
             <td>${res.name}</td>
           </tr>`;
         tr.addEventListener("click", (e) => {
-          location.href = `./pages/product-details.html?id=${res.id}`;
+          // console.log(location.pathname);
+          // console.log(location.search);
+          location.href = `${location.origin}/front-end/pages/product-details.html?id=${res.id}`;
+          // location.search = `?id=${res.id}`;
         });
         tbody.appendChild(tr);
       })
