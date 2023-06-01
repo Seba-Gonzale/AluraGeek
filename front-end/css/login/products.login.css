@@ -49,3 +49,17 @@
   top: -50%;
   right: 5px;
 }
+
+/* -------------------------- */
+.productos__items {
+  position: relative;
+}
+.productos__items .js__productos__items__delete {
+  position: absolute;
+  width: 30px;
+  top: 5px;
+  right: 5px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+}

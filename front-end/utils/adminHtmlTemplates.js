@@ -26,6 +26,7 @@ export function createElemItem(_imgSrc, _name, _price) {
   aux.innerHTML = `
         <li class="productos__items">
           <img
+            class="productos__items__img"
             src=${_imgSrc}
             alt="${_name}"
           />

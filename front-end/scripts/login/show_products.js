@@ -11,6 +11,14 @@ const SHOW_ITEMS = 12;
 // desde que posición comenzar a traer los items
 let count = 0;
 
+function addDeleteAndEdit(item) {
+  const imgDelete = document.createElement("img");
+  const imgEdit = document.createElement("img");
+  imgDelete.src = "../public/garbage.png";
+  imgDelete.classList.add("js__productos__items__delete");
+  item.appendChild(imgDelete);
+}
+
 async function fetchProductsFromServer(_elem_productsList) {
   const products = await client_service.getServerData(
     `/products?_start=${count}&_limit=${SHOW_ITEMS}`
@@ -18,12 +26,13 @@ async function fetchProductsFromServer(_elem_productsList) {
 
   products.forEach((p) => {
     const elem_item = createElemItem(p.image, p.name, p.price, p.id);
+    addDeleteAndEdit(elem_item);
     _elem_productsList.appendChild(elem_item);
     count++;
   });
 }
 
-(async function showAllProducts() {
+async function showAllProducts() {
   const sectionProductos = document.querySelector("[data-productos]");
   // Creamos una categoria llamada 'All' para insertar ahí los items
   const elem_category = createElemCategory("Todos");
@@ -73,4 +82,6 @@ async function fetchProductsFromServer(_elem_productsList) {
       sectionProductos.appendChild(createElemError());
     }
   }
-})();
+}
+
+showAllProducts();
