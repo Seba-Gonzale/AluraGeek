@@ -6,10 +6,20 @@ const elem_form = document.querySelector("[data-addProduct__form]");
 const elem_select = elem_form.querySelector(".add-product__categorys");
 // const sectionAddProduct = document.querySelector("[data-addProduct]");
 // const file = elem_form.querySelector(".add-product__file").files[0];
-// const name = elem_form.querySelector(".add-product__name").value;
-// const select_category = elem_form.querySelector(".add-product__categorys");
-// const price = elem_form.querySelector(".add-product__price").value;
-// const description = elem_form.querySelector(".add-product__description").value;
+const name = elem_form.querySelector(".add-product__name");
+const select_category = elem_form.querySelector(".add-product__categorys");
+const price = elem_form.querySelector(".add-product__price");
+const description = elem_form.querySelector(".add-product__description");
+const icon = elem_form.querySelector(".add-product__dragIcon");
+
+async function insertData(id) {
+  const res = await client_service.getServerData(`/products/${id}`);
+  name.value = res.name;
+  select_category.value = res.categoryId;
+  price.value = res.price;
+  description.value = res.description;
+  icon.src = res.image;
+}
 
 // Creación de lista de categorias a seleccionar en la creacion del nuevo producto
 async function createCategorysList(elem_select) {
@@ -84,7 +94,7 @@ elem_form.addEventListener("submit", async (event) => {
   }
 
   try {
-    await client_service.createProduct({
+    await client_service.editProduct({
       image,
       name,
       categoryId,
@@ -104,11 +114,14 @@ elem_form.addEventListener("submit", async (event) => {
 });
 
 createCategorysList(elem_select);
-validateImageField(true);
+// validateImageField();
 
 // Como luego del "POST" en el evento "submit" del formulario la pagina se recarga aunque utilice event.preventDefault()
 // usamos la recarga de la pagina para pasar un parametro por URL y utilizarlo para dar un mensaje si el producto se puedo crear o no
 const params = new URLSearchParams(location.search);
+if (params.has("id")) {
+  insertData(params.get("id"));
+}
 if (params.has("ok")) {
   elem_form.style.border = "2px solid lightgreen";
   elem_form.innerHTML +=

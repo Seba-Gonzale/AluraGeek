@@ -37,12 +37,11 @@ async function createProduct(props) {
 }
 
 async function editProduct(props) {
-  const { image, name, categoryId, price, description } = props;
-  const res_JSON = await fetch(`${serverDomain}/products`, {
+  const { id, image, name, categoryId, price, description } = props;
+  const res_JSON = await fetch(`${serverDomain}/products/${id}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-      id: uuid.v4(),
       image: image,
       name: name,
       price: price,
