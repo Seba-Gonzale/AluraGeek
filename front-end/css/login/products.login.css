@@ -58,8 +58,27 @@
   position: absolute;
   width: 30px;
   top: 5px;
-  right: 5px;
+  right: 3px;
   padding: 5px;
   background-color: rgba(255, 255, 255, 0.4);
   border-radius: 50%;
+}
+.productos__items .js__productos__items__delete:hover {
+  background-color: rgba(255, 0, 0, 0.6);
+  outline: 1px solid white;
+  cursor: pointer;
+}
+.productos__items .js__productos__items__edit {
+  position: absolute;
+  width: 30px;
+  top: 5px;
+  right: 39px;
+  padding: 5px;
+  background-color: rgba(255, 255, 255, 0.4);
+  border-radius: 50%;
+}
+.productos__items .js__productos__items__edit:hover {
+  background-color: rgba(0, 255, 0, 0.5);
+  outline: 1px solid white;
+  cursor: pointer;
 }

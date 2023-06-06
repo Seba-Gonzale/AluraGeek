@@ -21,10 +21,10 @@ export function createElemCategory(_categoryName) {
   return aux.children[0];
 }
 
-export function createElemItem(_imgSrc, _name, _price) {
+export function createElemItem(_imgSrc, _name, _price, _id) {
   const aux = document.createElement("aux");
   aux.innerHTML = `
-        <li class="productos__items">
+        <li id=${_id} class="productos__items">
           <img
             class="productos__items__img"
             src=${_imgSrc}

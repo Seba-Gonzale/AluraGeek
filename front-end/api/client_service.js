@@ -14,7 +14,6 @@ async function getServerData(query) {
 
 async function createProduct(props) {
   const { image, name, categoryId, price, description } = props;
-  console.log(image);
 
   const res_JSON = await fetch(`${serverDomain}/products`, {
     method: "POST",
@@ -35,6 +34,28 @@ async function createProduct(props) {
   } else {
     throw new Error(`\nstatus: ${res_JSON.status}\n could not post the data`);
   }
+}
+
+async function editProduct(props) {
+  const { image, name, categoryId, price, description } = props;
+  const res_JSON = await fetch(`${serverDomain}/products`, {
+    method: "PUT",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      id: uuid.v4(),
+      image: image,
+      name: name,
+      price: price,
+      categoryId: categoryId,
+      description: description,
+    }),
+  });
+}
+
+async function removeProduct(id) {
+  const res_JSON = await fetch(`${serverDomain}/products/${id}`, {
+    method: "DELETE",
+  });
 }
 
 async function createCategory(categoryName) {
@@ -61,5 +82,10 @@ async function createCategory(categoryName) {
   }
 }
 
-const client_service = { getServerData, createProduct, createCategory };
+const client_service = {
+  getServerData,
+  createProduct,
+  removeProduct,
+  createCategory,
+};
 export default client_service;

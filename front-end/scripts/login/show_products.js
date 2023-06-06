@@ -5,19 +5,12 @@ import {
   createElemCategory,
   createElemError,
 } from "../../utils/adminHtmlTemplates.js";
+import addDeleteAndEdit from "./addDeleteAndEdit.js";
 
 // Cantidad de items a mostrar
 const SHOW_ITEMS = 12;
 // desde que posición comenzar a traer los items
 let count = 0;
-
-function addDeleteAndEdit(item) {
-  const imgDelete = document.createElement("img");
-  const imgEdit = document.createElement("img");
-  imgDelete.src = "../public/garbage.png";
-  imgDelete.classList.add("js__productos__items__delete");
-  item.appendChild(imgDelete);
-}
 
 async function fetchProductsFromServer(_elem_productsList) {
   const products = await client_service.getServerData(

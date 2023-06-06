@@ -4,6 +4,12 @@ import validateImageField from "./validateImageField.js";
 
 const elem_form = document.querySelector("[data-addProduct__form]");
 const elem_select = elem_form.querySelector(".add-product__categorys");
+// const sectionAddProduct = document.querySelector("[data-addProduct]");
+// const file = elem_form.querySelector(".add-product__file").files[0];
+// const name = elem_form.querySelector(".add-product__name").value;
+// const select_category = elem_form.querySelector(".add-product__categorys");
+// const price = elem_form.querySelector(".add-product__price").value;
+// const description = elem_form.querySelector(".add-product__description").value;
 
 // Creación de lista de categorias a seleccionar en la creacion del nuevo producto
 async function createCategorysList(elem_select) {
@@ -97,8 +103,8 @@ elem_form.addEventListener("submit", async (event) => {
   }
 });
 
-validateImageField();
 createCategorysList(elem_select);
+validateImageField(true);
 
 // Como luego del "POST" en el evento "submit" del formulario la pagina se recarga aunque utilice event.preventDefault()
 // usamos la recarga de la pagina para pasar un parametro por URL y utilizarlo para dar un mensaje si el producto se puedo crear o no

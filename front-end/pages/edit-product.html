@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../public/favicon.svg"
+      type="image/svg+xml"
+    />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../css/reset.css" />
+    <link rel="stylesheet" href="../css/base.css" />
+    <link rel="stylesheet" href="../css/nav.css" />
+    <link
+      rel="stylesheet"
+      href="../css/agregar-producto/agregar-producto.css"
+    />
+    <link rel="stylesheet" href="../css/footer.css" />
+
+    <title>Add Product</title>
+  </head>
+  <body>
+    <header>
+      <ul class="nav">
+        <li>
+          <a href="../index.html"
+            ><img src="../public/Logo.png" alt="Logo AluraGeek"
+          /></a>
+        </li>
+
+        <li class="nav__busqueda">
+          <input
+            class="nav__input-busqueda"
+            type="text"
+            placeholder="¿Qué deseas buscar?"
+          />
+        </li>
+
+        <li>
+          <button
+            class="nav__button-login"
+            type="button"
+            onclick="window.location.href = './login.html'"
+          >
+            Menú Administrador
+          </button>
+        </li>
+      </ul>
+    </header>
+
+    <main>
+      <section id="add-product" data-addProduct>
+        <form method="get" class="add-product__form" data-addProduct__form>
+          <legend class="add-product__title">Editar producto</legend>
+          <ul class="add-product__lista">
+            <li class="add-product__item add-product__item--file">
+              <img
+                src="../public/dragAndDrop.png"
+                alt="Arrastre y suelte aquí una imagen"
+                class="add-product__dragIcon"
+              />
+              <input
+                class="add-product__file"
+                type="file"
+                name="file"
+                accept="image/*"
+              />
+              <label for="file" class="add-product__label--file"
+                >Haz click o arrastra y suelta la imagen</label
+              >
+            </li>
+            <li class="add-product__item">
+              <input
+                class="add-product__name"
+                name="name"
+                type="text"
+                required
+              />
+              <label for="name">Nombre del Producto</label>
+            </li>
+            <li class="add-product__item">
+              <select
+                name="categorys-list"
+                id="categorys-list"
+                class="add-product__categorys"
+                required
+              >
+                <!-- * Aquí iran las categorias traidas del servidor -->
+              </select>
+              <label for="categorys-list">Categoria del producto</label>
+            </li>
+            <!-- El siguiente item solo se muestra si se selecciona "nueva categoria" en el elemento <select>-->
+            <li
+              class="add-product__item"
+              style="display: none"
+              data-new-category
+            >
+              <input
+                type="text"
+                name="new-category"
+                data-input="new-category"
+              />
+              <label for="new-category">Nueva categoría</label>
+            </li>
+            <li class="add-product__item">
+              <input
+                class="add-product__price"
+                name="price"
+                type="number"
+                required
+              />
+              <label for="price">Precio del producto</label>
+            </li>
+            <li class="add-product__item">
+              <textarea
+                class="add-product__description"
+                name="description"
+                cols="30"
+                rows="5"
+                maxlength="150"
+                required
+              ></textarea>
+              <label for="description">Descripción del producto</label>
+            </li>
+            <li class="add-product__item">
+              <button class="add-product__submit" type="submit">
+                Agregar producto
+              </button>
+            </li>
+          </ul>
+        </form>
+      </section>
+    </main>
+
+    <footer class="footer-AluraGeek">
+      <figure>
+        <img src="../public/Logo.png" alt="Logo AluraGeek" />
+      </figure>
+      <form class="footer-AluraGeek__form" action="">
+        <p>Hable con nosotros</p>
+        <ul class="footer-AluraGeek__form-list">
+          <li class="footer-AluraGeek__field">
+            <input type="text" name="name" />
+            <label for="name"><span>Nombre</span></label>
+          </li>
+          <li class="footer-AluraGeek__field">
+            <label for="message">Mensaje</label>
+            <textarea name="message" cols="30" rows="10"></textarea>
+          </li>
+          <button type="submit">Enviar</button>
+        </ul>
+      </form>
+    </footer>
+
+    <footer class="footer-developer">
+      <address>
+        <p>
+          Desarrollado por
+          <a
+            href="https://seba-gonzale.github.io/Portafolios/"
+            target="_blank"
+            rel="noopener noreferrer"
+            >Augusto Sebastian Gonzale</a
+          >
+        </p>
+        <p>2023</p>
+      </address>
+    </footer>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/uuid/8.3.2/uuid.min.js"
+      integrity="sha512-UNM1njAgOFUa74Z0bADwAq8gbTcqZC8Ej4xPSzpnh0l6KMevwvkBvbldF9uR++qKeJ+MOZHRjV1HZjoRvjDfNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="../scripts/searchBar.js" type="module"></script>
+    <script
+      src="../scripts/edit-product/edit_product.js"
+      type="module"
+    ></script>
+  </body>
+</html>

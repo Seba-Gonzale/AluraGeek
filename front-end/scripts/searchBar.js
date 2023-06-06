@@ -64,3 +64,7 @@ table.addEventListener("mouseleave", (e) => {
   inputSearchBar.focus();
   inputSearchBar.addEventListener("blur", blur);
 });
+
+table.addEventListener("scroll", (e) => {
+  e.stopPropagation();
+});
