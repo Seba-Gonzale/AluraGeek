@@ -35,4 +35,34 @@
   /* El código base se encuentra en products.css */
   flex-wrap: wrap;
   overflow: visible;
+  justify-content: space-evenly;
+}
+
+@media screen and (max-width: 575px) {
+  .productos__lista {
+    gap: 2rem;
+  }
+  .productos__items {
+    flex: 0 0 90vw;
+  }
+  .productos__items__img {
+    height: 90vw;
+  }
+
+  .product__item--main-product {
+    flex-direction: column;
+    box-shadow: 0 0 1rem rgba(0, 0, 0, 0.3);
+  }
+  .product__img {
+    width: 100%;
+    /* filter: drop-shadow(); */
+  }
+  .product__legend {
+    width: 100%;
+    padding: 1rem;
+  }
+  .product__title {
+    font-size: 2rem;
+    text-align: center;
+  }
 }

@@ -1,4 +1,4 @@
-const serverDomain = `http://localhost:3000`;
+const serverDomain = `http://192.168.1.23:3000`;
 export const bugNames = { ErrorPostCategory: "ErrorPostCategory" };
 
 async function getServerData(query) {
@@ -37,8 +37,8 @@ async function createProduct(props) {
 }
 
 async function editProduct(props) {
-  const { id, image, name, categoryId, price, description } = props;
-  const res_JSON = await fetch(`${serverDomain}/products/${id}`, {
+  const { id_product, image, name, categoryId, price, description } = props;
+  const res_JSON = await fetch(`${serverDomain}/products/${id_product}`, {
     method: "PUT",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -84,6 +84,7 @@ async function createCategory(categoryName) {
 const client_service = {
   getServerData,
   createProduct,
+  editProduct,
   removeProduct,
   createCategory,
 };

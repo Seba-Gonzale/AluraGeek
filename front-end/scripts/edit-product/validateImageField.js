@@ -4,7 +4,7 @@ const elem_form = document.querySelector("[data-addProduct__form]");
 const elem_inputFile = elem_form.querySelector(".add-product__file");
 const elem_fieldFile = elem_form.querySelector(".add-product__item--file");
 
-export default function validateImageField(imgSrc) {
+export default function validateImageField() {
   const elem_fileLabel = elem_form.querySelector(".add-product__label--file");
   const elem_fileIcon = elem_form.querySelector(".add-product__dragIcon");
 
@@ -59,7 +59,8 @@ elem_fieldFile.addEventListener("drop", (e) => {
 });
 elem_fieldFile.addEventListener("click", (e) => {
   elem_inputFile.click();
-  elem_inputFile.addEventListener("change", (e) => {
-    validateImageField();
-  });
+});
+
+elem_inputFile.addEventListener("change", (e) => {
+  validateImageField();
 });

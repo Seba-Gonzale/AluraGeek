@@ -11,6 +11,8 @@ const select_category = elem_form.querySelector(".add-product__categorys");
 const price = elem_form.querySelector(".add-product__price");
 const description = elem_form.querySelector(".add-product__description");
 const icon = elem_form.querySelector(".add-product__dragIcon");
+const params = new URLSearchParams(location.search);
+const id_product = params.get("id");
 
 async function insertData(id) {
   const res = await client_service.getServerData(`/products/${id}`);
@@ -51,6 +53,26 @@ async function createCategorysList(elem_select) {
   });
 }
 
+createCategorysList(elem_select);
+
+// Como luego del "POST" en el evento "submit" del formulario la pagina se recarga aunque utilice event.preventDefault()
+// usamos la recarga de la pagina para pasar un parametro por URL y utilizarlo para dar un mensaje si el producto se puedo crear o no
+if (id_product) {
+  insertData(id_product);
+}
+
+if (params.has("ok")) {
+  elem_form.style.border = "2px solid lightgreen";
+  elem_form.innerHTML =
+    "<p style='color: green; text-align: center; font-weight: bold'>Producto editado con exito.</p>";
+  // const ul = document.querySelector(".add-product__lista");
+  // ul.style.display = "none";
+} else if (params.has("err")) {
+  elem_form.style.border = "2px solid red";
+  elem_form.innerHTML +=
+    "<p style='color: red; text-align: center; font-weight: bold'>Ocurrio un error!</p>";
+}
+
 // Evento "submit" del formulario y la ƒ(x) a ejecutar
 elem_form.addEventListener("submit", async (event) => {
   event.preventDefault();
@@ -74,11 +96,11 @@ elem_form.addEventListener("submit", async (event) => {
       reader.readAsDataURL(file);
     });
   }
-  if (!validateImageField("submit")) {
-    loader.removeFrom(sectionAddProduct);
-    return;
+
+  let image;
+  if (!validateImageField()) {
+    image = icon.src;
   }
-  const image = await transformToDataUrl(file);
 
   let categoryId = select_category.value;
   if (categoryId === "true") {
@@ -95,6 +117,7 @@ elem_form.addEventListener("submit", async (event) => {
 
   try {
     await client_service.editProduct({
+      id_product,
       image,
       name,
       categoryId,
@@ -103,31 +126,12 @@ elem_form.addEventListener("submit", async (event) => {
     });
     loader.removeFrom(sectionAddProduct);
     // Al terminar la creación del producto pasamos por url un "ok", ya que la pagina se recargará sola
-    location.href = "../pages/add-product.html?ok";
+    location.href = "../pages/edit-product.html?ok";
     elem_form.reset();
   } catch (err) {
     console.log(err);
     loader.removeFrom(sectionAddProduct);
     // Al terminar la creación del producto pasamos por url un "err", ya que la pagina se recargará sola
-    location.href = "../pages/add-product.html?err";
+    location.href = `../pages/edit-product.html?err&id=${id_product}`;
   }
 });
-
-createCategorysList(elem_select);
-// validateImageField();
-
-// Como luego del "POST" en el evento "submit" del formulario la pagina se recarga aunque utilice event.preventDefault()
-// usamos la recarga de la pagina para pasar un parametro por URL y utilizarlo para dar un mensaje si el producto se puedo crear o no
-const params = new URLSearchParams(location.search);
-if (params.has("id")) {
-  insertData(params.get("id"));
-}
-if (params.has("ok")) {
-  elem_form.style.border = "2px solid lightgreen";
-  elem_form.innerHTML +=
-    "<p style='color: green; text-align: center; font-weight: bold'>Producto creado con exito!</p>";
-} else if (params.has("err")) {
-  elem_form.style.border = "2px solid red";
-  elem_form.innerHTML +=
-    "<p style='color: red; text-align: center; font-weight: bold'>No se pudo crear el producto!</p>";
-}

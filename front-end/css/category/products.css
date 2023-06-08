@@ -5,3 +5,15 @@
 .productos__button-ver {
   display: none;
 }
+
+@media screen and (max-width: 575px) {
+  .productos__lista {
+    gap: 2rem;
+  }
+  .productos__items {
+    flex: 0 0 90vw;
+  }
+  .productos__items__img {
+    height: 90vw;
+  }
+}

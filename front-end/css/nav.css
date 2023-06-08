@@ -51,6 +51,7 @@
   overflow: auto;
   border-radius: 0.5rem;
   transform: translate(-50%, 0);
+  z-index: 1;
 }
 .lookup-table tbody {
   display: block;
@@ -82,4 +83,31 @@
 .lookup-table__item td {
   vertical-align: middle;
   padding: 0.2rem;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .lookup-table {
+    width: 70%;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .lookup-table {
+    width: 90%;
+  }
+}
+@media screen and (max-width: 575px) {
+  .nav {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  .nav > * {
+    width: 100%;
+    text-align: center;
+  }
+  .nav__busqueda {
+    order: 2;
+  }
+  .nav__button-login {
+    display: inline-block;
+  }
 }

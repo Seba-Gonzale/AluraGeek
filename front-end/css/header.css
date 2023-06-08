@@ -33,13 +33,26 @@
   padding: 1rem;
   border: none;
   transition: text-shadow 0.2s;
-}
-.header__button-consolas a {
   color: #fff;
 }
-.header__button-consolas a:visited {
+.header__button-consolas a {
+}
+.header__button-consolas:visited {
   color: #fff;
 }
 .header__button-consolas:hover {
   text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1023px) {
+  .header__banner {
+    height: 50vh;
+  }
+}
+@media screen and (min-width: 576px) and (max-width: 767px) {
+  .header__banner {
+    height: 50vh;
+  }
+}
+@media screen and (max-width: 575px) {
 }

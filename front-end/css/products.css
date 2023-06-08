@@ -34,7 +34,7 @@
 .productos__lista {
   display: flex;
   gap: 1rem;
-
+  padding: 0.5rem;
   padding-bottom: 2rem;
   overflow: scroll;
 }
@@ -44,8 +44,7 @@
   margin-bottom: 2rem;
 }
 .productos__items {
-  flex: 0 0 11rem;
-  max-width: 18%;
+  flex: 0 0 10rem;
   line-height: 1.5rem;
   transition: filter 0.2s;
 }
@@ -71,4 +70,10 @@
 .productos__detalle {
   color: var(--mainColor);
   font-weight: bold;
+}
+
+@media screen and (max-width: 575px) {
+  .productos {
+    padding: 1rem var(--sidePadding);
+  }
 }
