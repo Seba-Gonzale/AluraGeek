@@ -60,22 +60,40 @@
       </section>
     </main>
 
-    <footer class="footer-AluraGeek">
+    <footer class="footer-AluraGeek" data-footer="AluraGeek">
       <figure>
         <img src="../public/Logo.png" alt="Logo AluraGeek" />
       </figure>
-      <form class="footer-AluraGeek__form" action="">
+      <form class="footer-AluraGeek__form" data-form="AluraGeek">
         <p>Hable con nosotros</p>
         <ul class="footer-AluraGeek__form-list">
           <li class="footer-AluraGeek__field">
-            <input type="text" name="name" />
-            <label for="name"><span>Nombre</span></label>
+            <input
+              type="text"
+              name="name"
+              maxlength="40"
+              required
+              data-input--name
+            />
+            <label for="name">Nombre</label>
           </li>
           <li class="footer-AluraGeek__field">
+            <textarea
+              name="message"
+              cols="30"
+              rows="5"
+              maxlength="120"
+              required
+              data-textarea--message
+            ></textarea>
             <label for="message">Mensaje</label>
-            <textarea name="message" cols="30" rows="10"></textarea>
+            <label for="message" class="footer-AluraGeek__maxCaracteres"
+              >max 120</label
+            >
           </li>
-          <button type="submit">Enviar</button>
+          <button class="footer-AluraGeek__button--submit" type="button">
+            Enviar
+          </button>
         </ul>
       </form>
     </footer>

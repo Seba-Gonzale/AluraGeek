@@ -11,10 +11,10 @@ export function createElemCategory(_categoryName) {
         <ul class="productos__lista">
         </ul>
         <button class="productos__button-ver productos__button--ver-mas" type="button">
-            Ver mas<span>&#129083;</span>
+            Ver mas<span>+</span>
         </button>
         <button class="productos__button-ver productos__button--ver-menos" type="button">
-            Ver menos<span>&#129081;</span>
+            Ver menos<span>-</span>
         </button>
       </div>
     `;

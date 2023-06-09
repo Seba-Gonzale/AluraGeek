@@ -49,7 +49,9 @@
   width: 50%;
   max-height: 50vh;
   overflow: auto;
-  border-radius: 0.5rem;
+  border: 1px solid var(--mainColor);
+  border-top: none;
+  border-radius: 0 0 0.5rem 0.5rem;
   transform: translate(-50%, 0);
   z-index: 1;
 }
@@ -109,5 +111,14 @@
   }
   .nav__button-login {
     display: inline-block;
+  }
+  .lookup-table {
+    width: 98%;
+  }
+  .lookup-table tbody {
+    padding: 0;
+  }
+  .lookup-table__item {
+    margin: 0.5rem 0.5rem;
   }
 }

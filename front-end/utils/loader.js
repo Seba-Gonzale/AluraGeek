@@ -12,6 +12,7 @@ loader.showIn = (elemFather) => {
   elemFather.style.position = "relative";
   elemFather.style.overflow = "visible";
   elemFather.style.margin = "1.5rem auto";
+  elemFather.style.padding = "1.5rem";
 
   elemFather.appendChild(aux.children[0]);
 };
@@ -21,6 +22,7 @@ loader.removeFrom = (elemFather) => {
   elemFather.style.position = "";
   elemFather.style.overflow = "";
   elemFather.style.margin = "";
+  elemFather.style.padding = "";
 };
 
 export default loader;

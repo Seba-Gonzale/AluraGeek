@@ -20,6 +20,7 @@
   width: 100%;
   padding: 0.5rem;
   padding-top: 1.5rem;
+  resize: none;
   z-index: 3;
 }
 
@@ -35,7 +36,8 @@
   z-index: 1;
 }
 .footer-AluraGeek__field label[class="footer-AluraGeek__maxCaracteres"] {
-  left: 80%;
+  left: initial;
+  right: 0.4rem;
 }
 
 .footer-AluraGeek__button--submit {
@@ -55,4 +57,13 @@
 .footer-developer {
   text-align: center;
   padding: 2rem;
+}
+
+/* Medias */ /** Medias *************************/
+
+@media screen and (max-width: 767px) {
+  .footer-AluraGeek {
+    flex-direction: column;
+    text-align: center;
+  }
 }

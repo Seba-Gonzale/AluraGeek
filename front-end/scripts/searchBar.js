@@ -1,4 +1,5 @@
 import client_service from "../api/client_service.js";
+import loader from "../utils/loader.js";
 
 const nav = document.querySelector(".nav");
 const searchBar = document.querySelector(".nav__busqueda");
@@ -25,14 +26,18 @@ inputSearchBar.addEventListener("click", (e) => {
 
 inputSearchBar.addEventListener("focus", (e) => {
   table.style.display = "block";
+  inputSearchBar.addEventListener("blur", blur);
 });
 
 inputSearchBar.addEventListener("input", async (e) => {
+  tbody.innerHTML = "";
+  loader.showIn(tbody);
   const response = await client_service.getServerData(
     `/products?name_like=${e.target.value}&_sort=name&_order=asc`
   );
+  loader.removeFrom(tbody);
+
   if (response.length !== 0) {
-    tbody.innerHTML = "";
     response
       .map((res) => {
         const tr = document.createElement("tr");

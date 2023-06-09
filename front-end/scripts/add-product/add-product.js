@@ -4,20 +4,21 @@ import validateImageField from "./validateImageField.js";
 
 const elem_form = document.querySelector("[data-addProduct__form]");
 const elem_select = elem_form.querySelector(".add-product__categorys");
+const categoryName = elem_form.querySelector("[data-input='new-category']");
 
+function isItANewCategory(_new) {
+  const newField = document.querySelector("[data-new-category]");
+  if (_new === "true") {
+    newField.style.display = "flex";
+    newField.style.border = "2px solid orange";
+  } else if (newField.style.display !== "") {
+    newField.style.display = "";
+  }
+}
 // Creación de lista de categorias a seleccionar en la creacion del nuevo producto
 async function createCategorysList(elem_select) {
   const categorys = await client_service.getServerData("/categorys");
   // ƒ(x): Si escoje "crear nueva categoría" se procede a pedir el nombre de la nueva categoria con un <input/>
-  function newCategory(_new) {
-    const newField = document.querySelector("[data-new-category]");
-    if (_new) {
-      newField.style.display = "flex";
-      newField.style.border = "2px solid orange";
-    } else if (newField.style.display !== "none") {
-      newField.style.display = "none";
-    }
-  }
 
   categorys.unshift({ id: "", name: "Elija una categoría" });
   categorys.push({ id: true, name: "\u{1F528} Crear nueva categoría" });
@@ -26,14 +27,13 @@ async function createCategorysList(elem_select) {
     const elem_option = document.createElement("option");
     elem_option.textContent = category.name;
     elem_option.value = category.id;
-    if (category.id === true) {
-      elem_option.addEventListener("click", () => newCategory(true));
-    } else {
-      elem_option.addEventListener("click", () => newCategory(false));
-    }
     elem_select.appendChild(elem_option);
   });
 }
+
+elem_select.addEventListener("change", (e) => {
+  isItANewCategory(e.target.value);
+});
 
 // Evento "submit" del formulario y la ƒ(x) a ejecutar
 elem_form.addEventListener("submit", async (event) => {
@@ -67,10 +67,18 @@ elem_form.addEventListener("submit", async (event) => {
   let categoryId = select_category.value;
   if (categoryId === "true") {
     select_category.setCustomValidity("");
-    const categoryName = elem_form.querySelector(
-      "[data-input='new-category']"
-    ).value;
-    categoryId = await client_service.createCategory(categoryName);
+    const categoryName = elem_form.querySelector("[data-input='new-category']");
+    console.log(categoryName);
+    if (categoryName.value === "") {
+      categoryName.setCustomValidity("Ingrese el nombre de la nueva categoría");
+      categoryName.checkValidity();
+      loader.removeFrom(sectionAddProduct);
+      return;
+    } else {
+      categoryName.setCustomValidity("");
+      categoryName.checkValidity();
+      categoryId = await client_service.createCategory(categoryName.value);
+    }
   } else if (categoryId === "") {
     select_category.setCustomValidity("Elija una categoría");
     loader.removeFrom(sectionAddProduct);
@@ -94,6 +102,20 @@ elem_form.addEventListener("submit", async (event) => {
     loader.removeFrom(sectionAddProduct);
     // Al terminar la creación del producto pasamos por url un "err", ya que la pagina se recargará sola
     location.href = "../pages/add-product.html?err";
+  }
+});
+
+// !reparar ---------------------------
+categoryName.addEventListener("blur", async (e) => {
+  if (categoryName.value === "") {
+    categoryName.setCustomValidity("Ingrese el nombre de la nueva categoría");
+    // categoryName.checkValidity();
+    // loader.removeFrom(sectionAddProduct);
+    // return;
+  } else {
+    categoryName.setCustomValidity("");
+    // categoryName.checkValidity();
+    // categoryId = await client_service.createCategory(categoryName.value);
   }
 });
 
