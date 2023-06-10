@@ -11,14 +11,20 @@ function isItANewCategory(_new) {
   if (_new === "true") {
     newField.style.display = "flex";
     newField.style.border = "2px solid orange";
+    newField.children[0].focus();
   } else if (newField.style.display !== "") {
+    categoryName.setCustomValidity("");
     newField.style.display = "";
   }
 }
 // Creación de lista de categorias a seleccionar en la creacion del nuevo producto
 async function createCategorysList(elem_select) {
-  const categorys = await client_service.getServerData("/categorys");
-  // ƒ(x): Si escoje "crear nueva categoría" se procede a pedir el nombre de la nueva categoria con un <input/>
+  let categorys = [];
+  try {
+    categorys = await client_service.getServerData("/categorys");
+  } catch (err) {
+    console.log(err);
+  }
 
   categorys.unshift({ id: "", name: "Elija una categoría" });
   categorys.push({ id: true, name: "\u{1F528} Crear nueva categoría" });
@@ -68,21 +74,7 @@ elem_form.addEventListener("submit", async (event) => {
   if (categoryId === "true") {
     select_category.setCustomValidity("");
     const categoryName = elem_form.querySelector("[data-input='new-category']");
-    console.log(categoryName);
-    if (categoryName.value === "") {
-      categoryName.setCustomValidity("Ingrese el nombre de la nueva categoría");
-      categoryName.checkValidity();
-      loader.removeFrom(sectionAddProduct);
-      return;
-    } else {
-      categoryName.setCustomValidity("");
-      categoryName.checkValidity();
-      categoryId = await client_service.createCategory(categoryName.value);
-    }
-  } else if (categoryId === "") {
-    select_category.setCustomValidity("Elija una categoría");
-    loader.removeFrom(sectionAddProduct);
-    return;
+    categoryId = await client_service.createCategory(categoryName.value);
   }
 
   try {
@@ -105,17 +97,11 @@ elem_form.addEventListener("submit", async (event) => {
   }
 });
 
-// !reparar ---------------------------
-categoryName.addEventListener("blur", async (e) => {
+categoryName.addEventListener("blur", (e) => {
   if (categoryName.value === "") {
     categoryName.setCustomValidity("Ingrese el nombre de la nueva categoría");
-    // categoryName.checkValidity();
-    // loader.removeFrom(sectionAddProduct);
-    // return;
   } else {
     categoryName.setCustomValidity("");
-    // categoryName.checkValidity();
-    // categoryId = await client_service.createCategory(categoryName.value);
   }
 });
 
@@ -127,10 +113,10 @@ createCategorysList(elem_select);
 const params = new URLSearchParams(location.search);
 if (params.has("ok")) {
   elem_form.style.border = "2px solid lightgreen";
-  elem_form.innerHTML +=
+  elem_form.innerHTML =
     "<p style='color: green; text-align: center; font-weight: bold'>Producto creado con exito!</p>";
 } else if (params.has("err")) {
   elem_form.style.border = "2px solid red";
   elem_form.innerHTML +=
-    "<p style='color: red; text-align: center; font-weight: bold'>No se pudo crear el producto!</p>";
+    "<p style='color: red; text-align: center; font-weight: bold'>No se pudo crear el producto! <br> Es posible que la imagen sea muy grande</p>";
 }

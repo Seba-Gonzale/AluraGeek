@@ -96,6 +96,11 @@
   .lookup-table {
     width: 90%;
   }
+  .nav__button-login {
+    padding: 0.8rem 0.8rem;
+    text-align: center;
+    cursor: pointer;
+  }
 }
 @media screen and (max-width: 575px) {
   .nav {

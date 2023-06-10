@@ -60,7 +60,7 @@ elem_fieldFile.addEventListener("drop", (e) => {
 });
 elem_fieldFile.addEventListener("click", (e) => {
   elem_inputFile.click();
-  elem_inputFile.addEventListener("change", (e) => {
-    validateImageField();
-  });
+});
+elem_inputFile.addEventListener("change", (e) => {
+  validateImageField();
 });

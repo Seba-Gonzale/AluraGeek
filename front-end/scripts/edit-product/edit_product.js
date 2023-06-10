@@ -4,22 +4,24 @@ import validateImageField from "./validateImageField.js";
 
 const elem_form = document.querySelector("[data-addProduct__form]");
 const elem_select = elem_form.querySelector(".add-product__categorys");
-// const sectionAddProduct = document.querySelector("[data-addProduct]");
-// const file = elem_form.querySelector(".add-product__file").files[0];
+
 const name = elem_form.querySelector(".add-product__name");
 const select_category = elem_form.querySelector(".add-product__categorys");
 const price = elem_form.querySelector(".add-product__price");
 const description = elem_form.querySelector(".add-product__description");
 const icon = elem_form.querySelector(".add-product__dragIcon");
+
 const params = new URLSearchParams(location.search);
 const id_product = params.get("id");
+
+// ********************
 
 async function insertData(id) {
   const res = await client_service.getServerData(`/products/${id}`);
   name.value = res.name;
   select_category.value = res.categoryId;
   price.value = res.price;
-  description.value = res.description;
+  description.value = res.description !== undefined ? res.description : "";
   icon.src = res.image;
 }
 

@@ -17,7 +17,7 @@ table.classList.add("lookup-table");
 nav.insertAdjacentElement("beforeend", table);
 
 searchBar.addEventListener("click", () => {
-  console.log("hola mundo");
+  inputSearchBar.focus();
 });
 
 inputSearchBar.addEventListener("click", (e) => {

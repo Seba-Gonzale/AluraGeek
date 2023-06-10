@@ -40,7 +40,7 @@
 .productos__button--ver-mas span {
   /* CSS principal products.css */
   font-size: 2rem;
-  top: -15%;
+  top: 0%;
   right: 5px;
 }
 .productos__button--ver-menos span {
