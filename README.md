@@ -1,4 +1,4 @@
-![imagen de muestra](https://drive.google.com/file/d/1cQoRJ3X-VnbG0mUkA0Fd3dom6tCPTgLO/view?usp=sharing)
+![imagen de muestra](https://github.com/Seba-Gonzale/AluraGeek/blob/main/front-end/public/Captura%20de%20pantalla%20de%202023-06-10%2014-56-47.png)
 
 # AluraGeek
 Tercer Challenge del proyecto ONE de Oracle Next Education y Alura Latam
