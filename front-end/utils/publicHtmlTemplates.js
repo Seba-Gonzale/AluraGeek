@@ -46,7 +46,7 @@ export function createElemError() {
   const aux = document.createElement("aux");
   const style = "text-align: center; font-weight: bold";
   aux.innerHTML = `
-      <p style="${style}">¡no se pudo obtener los datos!</p>
+      <p style="${style}">¡Éste proyecto requiere de json-server y su base de datos, por favor decarguelo de la pagina de github del proyecto!</p>
     `;
   return aux.children[0];
 }
